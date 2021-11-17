@@ -1,5 +1,7 @@
 "use strict";
 
+var data = {};
+
 $(function () {
     fetchNavBottom();
 
@@ -11,6 +13,8 @@ $(function () {
     $("#number-of-tickets #input button:first").click(onTicketDecreaseClick);
     $("#number-of-tickets #input input").change(onNumberOfTicketsChange);
     $("#number-of-tickets #input button:last").click(onTicketIncreaseClick);
+
+    $("#confirm").click(onConfirmTicketClick);
 
     $(".button-row.ticket-seller button").eq(0).click();
 });
@@ -85,7 +89,7 @@ function showButtonRow(rowHideClasses, rowShowClass) {
 }
 
 function updateDescription() {
-    var data = {}
+    data = {}
     $(".button-row:visible button.selected").each((i, self) => {
         data = {...data, ...$(self).data()};
     })
@@ -112,7 +116,10 @@ function onNumberOfTicketsChange(e) {
     var input = $(e.target);
     var numberOfTickets = parseInt(input.val());
     var price = $("#ticket-price span").data("value");
-    $("#total-price span").text(formatPrice(price * numberOfTickets));
+    var totalPrice = price * numberOfTickets;
+    $("#total-price span").text(formatPrice(totalPrice));
+    data.tickets = numberOfTickets;
+    data.totalPrice = totalPrice;
 }
 
 function onTicketIncreaseClick() {
@@ -135,4 +142,20 @@ function increaseNumberOfTickets(relativeNumber) {
     
     input.val(currentValue + relativeNumber);
     input.change();
+}
+
+function onConfirmTicketClick() {
+    var selectedTickets = JSON.parse(window.sessionStorage.getItem("tickets"));
+    var ticketIndex = window.sessionStorage.getItem("ticketIndex");
+
+    if(selectedTickets === null)
+        selectedTickets = [];
+
+    if(ticketIndex === null)
+        ticketIndex = 0;
+
+    selectedTickets[ticketIndex] = data;
+    console.log(data);
+    window.sessionStorage.setItem("tickets", JSON.stringify(selectedTickets));
+    window.sessionStorage.setItem("ticketIndex", ticketIndex);
 }
