@@ -27,6 +27,7 @@ const TICKETS = {
         }
     },
     mzkzg: {
+        name: "Metropolitalny",
         "single-trip": {
             name: "1-przejazdowy",
             zones: [

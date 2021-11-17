@@ -1,0 +1,61 @@
+@import "common.css";
+
+main {
+    position: relative;
+}
+
+#summary {
+    margin: 0 15px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+#summary th,
+#summary td {
+    font-size: 24px;
+    vertical-align: middle;
+    padding: 7px 0;
+}
+
+#summary th:first-child,
+#summary td:first-child {
+    text-align: left;
+}
+
+#summary tr:nth-last-child(2) th,
+#summary tr:nth-last-child(2) td {
+    padding-bottom: 14px;
+}
+
+#summary button {
+    width: 50px;
+    height: 50px;
+}
+
+#summary button i {
+    font-size: 24px;
+}
+
+#summary .totalPrice th,
+#summary .totalPrice td {
+    border-top: 1px solid black;
+    padding: 14px 0;
+}
+
+#summary .totalPrice td {
+    font-size: 40px;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.button-row {
+    margin: 15px 90px;
+}
+
+.button-row button {
+    height: 100px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ZKM Gdynia – Automat biletowy</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="css/summary.css" />
+        <link rel="stylesheet" href="css/all.min.css" />
+        <script type="text/javascript" src="scripts/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/tickets.js"></script>
+        <script type="text/javascript" src="scripts/summary.js"></script>
+    </head>
+    <body>
+        <div id="screen">
+            <main>
+                <table id="summary">
+                    <tr class="header">
+                        <th>Bilet</th>
+                        <th>Liczba</th>
+                        <th>Cena</th>
+                        <th>Zmień</th>
+                        <th>Usuń</th>
+                    </tr>
+                    <tr class="totalPrice">
+                        <th colspan="2">Razem</th>
+                        <td>7,60 zł</td>
+                        <td colspan="2"></td>
+                    </tr>
+                </table>
+                <div class="buttons">
+                    <div class="button-row">
+                        <button id="add-ticket">Dodaj kolejny bilet</button>
+                        <button style="visibility: hidden"></button>
+                    </div>
+                    <div class="button-row">
+                        <button id="pay-cash">Zapłać gotówką</button>
+                        <button id="pay-card">Zapłać kartą</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

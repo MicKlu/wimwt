@@ -65,7 +65,13 @@ function fetchNavBottom()
     `)
 
 
+    $("#button-back").click(() => {
+        history.back();
+    });
+
     $("#button-cancel").click(() => {
+        window.sessionStorage.removeItem("tickets");
+        window.sessionStorage.removeItem("ticketIndex");
        location.href = "index.html"; 
     });
 }

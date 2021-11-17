@@ -158,4 +158,6 @@ function onConfirmTicketClick() {
     console.log(data);
     window.sessionStorage.setItem("tickets", JSON.stringify(selectedTickets));
     window.sessionStorage.setItem("ticketIndex", ticketIndex);
+
+    location.href = "summary.html";
 }
