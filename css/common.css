@@ -76,6 +76,11 @@ main {
     justify-content: center;
 }
 
+.button-row button.selected {
+    background: #d9d9d9;
+    border: 4px inset;
+}
+
 .button-row button {
     width: 100%;
     margin: 0 5px;
@@ -87,7 +92,7 @@ main {
 
 #right-pane {
     border-left: 1px solid black;
-    flex-grow: 1;
+    width: 467px;
 }
 
 #right-pane h1 {

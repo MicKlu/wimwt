@@ -4,6 +4,7 @@ $(function () {
     fetchNavTop();
     updateDateTime();
     setInterval(updateDateTime, 1000);
+
 });
 
 function updateDateTime() {
@@ -62,4 +63,17 @@ function fetchNavBottom()
         <button id="button-cancel">Zrezygnuj</button>
     </nav>
     `)
+
+
+    $("#button-cancel").click(() => {
+       location.href = "index.html"; 
+    });
+}
+
+function formatPrice(priceValue) {
+    
+    var zl = Math.floor(priceValue);
+    var gr = Math.round((priceValue - zl) * 100);
+    var priceStr = "" + zl + "," + ((gr > 0) ? gr : "00");
+    return priceStr;    
 }

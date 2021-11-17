@@ -5,6 +5,7 @@
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="css/buyticket.css" />
         <script type="text/javascript" src="scripts/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="scripts/tickets.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
         <script type="text/javascript" src="scripts/buyticket.js"></script>
     </head>
@@ -12,18 +13,36 @@
         <div id="screen">
             <main>
                 <div id="left-pane">
-                    <div class="button-row">
-                        <button id="zkm">ZKM Gdynia</button>
-                        <button id="mzkzg">Metropolitalny</button>
+                    <div class="button-row ticket-seller">
+                        <button data-seller="zkm">ZKM Gdynia</button>
+                        <button data-seller="mzkzg">Metropolitalny</button>
                     </div>
-                    <div class="button-row" id="ticket-type">
-                        <button id="single-trip">1-przejazdowy</button>
-                        <button id="one-hour">1-godzinny</button>
-                        <button id="one-day">24-godzinny</button>
+                    <div class="button-row ticket-type zkm">
+                        <button data-type="single-trip">1-przejazdowy</button>
+                        <button data-type="one-hour">1-godzinny</button>
+                        <button data-type="one-day">24-godzinny</button>
                     </div>
-                    <div class="button-row">
-                        <button id="full-price">Normalny</button>
-                        <button id="reduced">Ulgowy</button>
+                    <div class="button-row ticket-type mzkzg">
+                        <button data-type="single-trip">1-przejazdowy</button>
+                        <button data-type="one-day">24-godzinny</button>
+                        <button data-type="two-days">72-godzinny</button>
+                    </div>
+                    <div class="button-row ticket-zone single-trip">
+                        <button data-zone="0">Linie zwykłe<br />i nocne</button>
+                        <button data-zone="1">Linie zwykłe,<br />pospieszne i nocne</button>
+                    </div>
+                    <div class="button-row ticket-zone one-day">
+                        <button data-zone="2">Komunalny</button>
+                        <button data-zone="3">Kolejowo-<br />komunalny<br />2 organizatorów</button>
+                        <button data-zone="4">Kolejowo-<br />komunalny</button>
+                    </div>
+                    <div class="button-row ticket-zone two-days">
+                        <button data-zone="2">Komunalny</button>
+                        <button data-zone="4">Kolejowo-<br />komunalny</button>
+                    </div>
+                    <div class="button-row ticket-price">
+                        <button data-price="full">Normalny</button>
+                        <button data-price="reduced">Ulgowy</button>
                     </div>
                 </div>
                 <div id="right-pane">
@@ -37,7 +56,7 @@
                             <h1>Liczba</h1>
                             <div id="input">
                                 <button>-</button>
-                                <input type="text" value="1" />
+                                <input type="text" value="1" readonly/>
                                 <button>+</button>
                             </div>
                         </div>

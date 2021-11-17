@@ -1,11 +1,11 @@
 @import "common.css";
 
-#screen {
-    background: url("/home/michu/Dev/junk/WiMwT/img/kbzkm.png");
-}
-
 main {
     flex-direction: row;
+}
+
+.button-row:not(.ticket-seller) {
+    display: none;
 }
 
 .button-row {
@@ -13,7 +13,9 @@ main {
     height: 125px;
 }
 
-#ticket-type button {
+.ticket-type button,
+.ticket-zone.single-trip button,
+.ticket-zone.one-day button {
     font-size: 20px;
 }
 
