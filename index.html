@@ -3,11 +3,25 @@
     <head>
         <title>ZKM Gdynia – Automat biletowy</title>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/start.css" />
         <script type="text/javascript" src="scripts/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/start.js"></script>
     </head>
     <body>
-        
+        <div id="screen">
+            <main>
+                <div class="button-row" id="start-upper-row">
+                    <button id="single-trip-full">1-przejazdowy<br />Normalny</button>
+                    <button id="single-trip-reduced">1-przejazdowy<br />Ulgowy</button>
+                    <button id="one-hour-full">1-godzinny<br />Normalny</button>
+                    <button id="one-hour-reduced">1-godzinny<br />Ulgowy</button>
+                </div>
+                <div class="button-row" id="start-lower-row">
+                    <button id="buy-ticket">Kup bilet</button>
+                    <button id="top-up-card">Doładuj kartę<br />miejską</button>
+                </div>
+            </main>
+        </div>
     </body>
 </html>
