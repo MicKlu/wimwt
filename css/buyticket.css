@@ -1,0 +1,68 @@
+@import "common.css";
+
+#screen {
+    background: url("/home/michu/Dev/junk/WiMwT/img/kbzkm.png");
+}
+
+main {
+    flex-direction: row;
+}
+
+.button-row {
+    margin: 15px 10px;
+    height: 125px;
+}
+
+#ticket-type button {
+    font-size: 20px;
+}
+
+#confirmation {
+    padding: 30px 5px 0;
+    text-align: center;
+}
+
+#number-of-tickets {
+    text-align: center;
+}
+
+#number-of-tickets h1 {
+    font-size: 36px;
+}
+
+#input {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#input button {
+    width: 60px;
+    height: 60px;
+}
+
+#input input {
+    text-align: center;
+    width: 180px;
+    height: 70px;
+}
+
+#total-price {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#total-price p:first-child {
+    flex-grow: 1;
+    text-align: left;
+}
+
+#total-price p:last-child {
+    font-size: 48px;
+}
+
+#confirm {
+    width: 250px;
+    height: 90px;
+    margin-top: 30px;
+}

@@ -1,9 +1,5 @@
 @import "common.css";
 
-#screen {
-    background: url("/home/michu/Dev/junk/WiMwT/img/start.png");
-}
-
 #start-upper-row {
     margin: 60px 20px 0;
 }

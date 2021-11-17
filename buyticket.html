@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ZKM Gdynia – Automat biletowy</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="css/buyticket.css" />
+        <script type="text/javascript" src="scripts/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/buyticket.js"></script>
+    </head>
+    <body>
+        <div id="screen">
+            <main>
+                <div id="left-pane">
+                    <div class="button-row">
+                        <button id="zkm">ZKM Gdynia</button>
+                        <button id="mzkzg">Metropolitalny</button>
+                    </div>
+                    <div class="button-row" id="ticket-type">
+                        <button id="single-trip">1-przejazdowy</button>
+                        <button id="one-hour">1-godzinny</button>
+                        <button id="one-day">24-godzinny</button>
+                    </div>
+                    <div class="button-row">
+                        <button id="full-price">Normalny</button>
+                        <button id="reduced">Ulgowy</button>
+                    </div>
+                </div>
+                <div id="right-pane">
+                    <div id="ticket-desc">
+                        <h1>O bilecie</h1>
+                        <p>Jednoprzejazdowy na linie zwykłe i nocne<br />obowiązuje w pojazdach: ZKM w Gdyni</p>
+                        <p id="ticket-price">Cena: <span>3,80</span> zł</p>
+                    </div>
+                    <div id="confirmation">
+                        <div id="number-of-tickets">
+                            <h1>Liczba</h1>
+                            <div id="input">
+                                <button>-</button>
+                                <input type="text" value="1" />
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <div id="total-price">
+                            <p>Cena razem:</p>
+                            <p><span>7,60</span> zł</p>
+                        </div>
+                        <button id="confirm">Zatwierdź</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
