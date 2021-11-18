@@ -5,6 +5,14 @@ $(function () {
     fetchSummaryTable();
 
     $("#add-ticket").click(onAddTicketClick);
+
+    $("#pay-cash").click(() => {
+        location.href = "paymentcash.html";
+    });
+
+    $("#pay-card").click(() => {
+        location.href = "paymentcard.html";
+    });
 });
 
 function fetchSummaryTable() {

@@ -23,6 +23,9 @@ div {
     border: 1px solid black;
     box-sizing: border-box;
     margin: 10px auto 0;
+    position: relative;
+    transform-origin: top;
+    transform: scale(0.8);
 }
 
 nav {
@@ -115,4 +118,21 @@ p#ticket-price{
     font-size: 24px;
     position: absolute;
     bottom: 5px;
+}
+
+#panel {
+    position: absolute;
+    top: 0;
+    left: 1044px;
+    border: 1px solid black;
+    width: 250px;
+    height: 768px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#panel button {
+    margin: 5px 0;
 }

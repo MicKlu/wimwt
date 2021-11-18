@@ -80,6 +80,10 @@ function formatPrice(priceValue) {
     
     var zl = Math.floor(priceValue);
     var gr = Math.round((priceValue - zl) * 100);
+    if(gr == 100) {
+        gr = 0;
+        zl++;
+    }
     var priceStr = "" + zl + "," + ((gr > 0) ? gr : "00");
     return priceStr;    
 }

@@ -1,0 +1,30 @@
+@import "common.css";
+
+main {
+    flex-direction: row;
+}
+
+#left-pane,
+#right-pane {
+    text-align: center;
+}
+
+.box {
+    margin: 60px 0;
+}
+
+#left-pane .box p {
+    font-size: 40px;
+}
+
+#left-pane .box h1 {
+    font-size: 44px;
+}
+
+#right-pane .box:not(:first-child) {
+    margin-top: 170px;
+}
+
+#left-pane #info p {
+    font-size: 28px;
+}

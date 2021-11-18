@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ZKM Gdynia – Automat biletowy</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="css/payment.css" />
+        <script type="text/javascript" src="scripts/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/paymentcash.js"></script>
+    </head>
+    <body>
+        <div id="screen">
+            <main>
+                <div id="left-pane">
+                    <div class="box" id="total-price">
+                        <h1>Do zapłaty</h1>
+                        <p><span>7,60</span> zł</p>
+                    </div>
+                    <div class="box" id="paid">
+                        <h1>Wpłacono</h1>
+                        <p><span>2,00</span> zł</p>
+                    </div>
+                    <div class="box" id="remaining">
+                        <h1>Pozostało</h1>
+                        <p><span>5,60</span> zł</p>
+                    </div>
+                </div>
+                <div id="right-pane">
+                    <div class="box" id="remaining">
+                        <h1>Automaty przyjmuje monety</h1>
+                        <p>10 gr, 20 gr, 50 gr<br />1 zł, 2 zł, 5 zł</p>
+                    </div>
+                    <div class="box" id="remaining">
+                        <h1>Automaty przyjmuje banknoty</h1>
+                        <p>10 zł, 20 zł, 50 zł</p>
+                    </div>
+                </div>
+            </main>
+            <div id="panel">
+                <button id="button-10gr">10 gr</button>
+                <button id="button-20gr">20 gr</button>
+                <button id="button-50gr">50 gr</button>
+                <button id="button-1zl">1 zł</button>
+                <button id="button-2zl">2 zł</button>
+                <button id="button-5zl">5 zł</button>
+                <button id="button-10zl">10 zł</button>
+                <button id="button-20zl">20 zł</button>
+                <button id="button-50zl">50 zł</button>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+@import "common.css";
+
+main {
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+main > div {
+    flex-grow: 1;
+}
+
+main h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
