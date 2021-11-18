@@ -1,3 +1,16 @@
+:root {
+    --bg-color: #5EA9D0;
+    --bg-image: url("../img/bg2.jpg");
+    --text-color: white;
+    --nav-bg: #3D4A52;
+    --button-bg: #334bff;
+    --button-text-color: white;
+    --button-bg-selected: #333f99;
+    --button-border-color: #aaf;
+    --dim-color: rgba(0,0,0,0.4);
+    --button-radius: 15px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -26,6 +39,10 @@ div {
     position: relative;
     transform-origin: top;
     transform: scale(0.8);
+    background-image: var(--bg-image);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden;
 }
 
 nav {
@@ -34,6 +51,7 @@ nav {
     height: 80px;
     display: flex;
     align-items: center;
+    background: var(--nav-bg);
 }
 
 #nav-top {
@@ -52,6 +70,7 @@ nav {
     margin: 0 5px;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 #i18n img {
@@ -64,7 +83,7 @@ nav {
 
 #nav-bottom button {
     width: 180px;
-    height: 50px;
+    height: 60px;
     margin: 0 5px;
 }
 
@@ -79,14 +98,24 @@ main {
     justify-content: center;
 }
 
-.button-row button.selected {
-    background: #d9d9d9;
-    border: 4px inset;
+.button-row button.selected,
+nav button:active,
+main button:active {
+    background: var(--button-bg-selected);
+    border: 4px inset var(--button-border-color);
 }
 
 .button-row button {
     width: 100%;
     margin: 0 5px;
+}
+
+nav button,
+main button {
+    border-radius: var(--button-radius);
+    background: var(--button-bg);
+    border: 4px outset var(--button-border-color);
+    color: var(--button-text-color);
 }
 
 #left-pane {
@@ -96,10 +125,17 @@ main {
 #right-pane {
     border-left: 1px solid black;
     width: 467px;
+    background: var(--dim-color);
 }
 
 #right-pane h1 {
     font-weight: normal;
+}
+
+#left-pane .box {
+    background: var(--dim-color);
+    margin: 30px 40px;
+    border-radius: 5px;
 }
 
 #ticket-desc {

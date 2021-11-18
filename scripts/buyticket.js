@@ -19,7 +19,7 @@ $(function () {
     var selectedTickets = JSON.parse(window.sessionStorage.getItem("tickets"));
     var ticketIndex = window.sessionStorage.getItem("ticketIndex");
 
-    if(ticketIndex == selectedTickets.length)
+    if(selectedTickets === null || ticketIndex == selectedTickets.length)
         $(".button-row.ticket-seller button").eq(0).click();
     else {
         var seller = selectedTickets[ticketIndex].seller;

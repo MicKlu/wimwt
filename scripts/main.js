@@ -38,18 +38,18 @@ function fetchNavTop()
     <nav id="nav-top">
         <div id="datetime"></div>
         <div id="i18n">
-            <div class="flag flag-pl">
+            <button class="flag flag-pl">
                 <img src="img/flag-pl.png" />
-            </div>
-            <div class="flag flag-en">
+            </button>
+            <button class="flag flag-en">
                 <img src="img/flag-en.png" />
-            </div>
-            <div class="flag flag-de">
+            </button>
+            <button class="flag flag-de">
                 <img src="img/flag-de.png" />
-            </div>
-            <div class="flag flag-ru">
+            </button>
+            <button class="flag flag-ru">
                 <img src="img/flag-ru.png" />
-            </div>
+            </button>
         </div>
     </nav>
     `)
