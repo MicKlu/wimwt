@@ -5,45 +5,60 @@ main {
 }
 
 #summary {
-    margin: 0 15px;
+    margin: 10px 15px 0;
     text-align: center;
     border-collapse: collapse;
 }
 
 #summary th,
 #summary td {
-    font-size: 24px;
+    font-size: 20px;
     vertical-align: middle;
-    padding: 7px 0;
+    padding: 7px 10px;
+    background: var(--dim-color);
+    height: 50px;
 }
 
-#summary th:first-child,
-#summary td:first-child {
+#summary th:nth-child(2),
+#summary td:nth-child(2) {
     text-align: left;
 }
 
-#summary tr:nth-last-child(2) th,
-#summary tr:nth-last-child(2) td {
-    padding-bottom: 14px;
+#summary th,
+#summary .total-price th,
+#summary .total-price td {
+    background: var(--nav-bg);
+}
+
+#summary tr:nth-child(even):not(.total-price) td {
+    background: var(--dim-color-light);
 }
 
 #summary button {
     width: 50px;
     height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #summary button i {
-    font-size: 24px;
+    font-size: 20px;
 }
 
-#summary .totalPrice th,
-#summary .totalPrice td {
-    border-top: 1px solid black;
-    padding: 14px 0;
+#summary .total-price th,
+#summary .total-price td {
+    padding: 14px 10px;
 }
 
-#summary .totalPrice td {
+#summary .total-price th {
+    font-size: 28px;
+    text-align: left;
+}
+
+#summary .total-price td {
     font-size: 40px;
+    text-align: center;
 }
 
 .buttons {
@@ -58,4 +73,9 @@ main {
 
 .button-row button {
     height: 100px;
+}
+
+.button-prev,
+.button-next {
+    display: none;
 }

@@ -8,7 +8,9 @@
     --button-bg-selected: #333f99;
     --button-border-color: #aaf;
     --dim-color: rgba(0,0,0,0.4);
+    --dim-color-light: rgba(0,0,0,0.3);
     --button-radius: 15px;
+    --spearator-color: rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -30,6 +32,13 @@ div {
     box-sizing: border-box;
 }
 
+#container {
+    width: 1024px;
+    margin: 0 auto;
+    transform-origin: top;
+    transform: scale(0.8);
+}
+
 #screen {
     width: 1024px;
     height: 768px;
@@ -37,8 +46,6 @@ div {
     box-sizing: border-box;
     margin: 10px auto 0;
     position: relative;
-    transform-origin: top;
-    transform: scale(0.8);
     background-image: var(--bg-image);
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -52,10 +59,6 @@ nav {
     display: flex;
     align-items: center;
     background: var(--nav-bg);
-}
-
-#nav-top {
-    border-bottom: 1px solid black;
 }
 
 #datetime {
@@ -75,10 +78,6 @@ nav {
 
 #i18n img {
     height: 48px;
-}
-
-#nav-bottom {
-    border-top: 1px solid black;
 }
 
 #nav-bottom button {
@@ -123,9 +122,11 @@ main button {
 }
 
 #right-pane {
-    border-left: 1px solid black;
     width: 467px;
     background: var(--dim-color);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
 }
 
 #right-pane h1 {
@@ -139,7 +140,7 @@ main button {
 }
 
 #ticket-desc {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--spearator-color);
     height: 205px;
     padding: 5px;
     position: relative;

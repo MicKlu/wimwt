@@ -10,64 +10,67 @@
         <script type="text/javascript" src="scripts/buyticket.js"></script>
     </head>
     <body>
-        <div id="screen">
-            <main>
-                <div id="left-pane">
-                    <div class="button-row ticket-seller">
-                        <button data-seller="zkm">ZKM Gdynia</button>
-                        <button data-seller="mzkzg">Metropolitalny</button>
+        <div id="container">
+
+            <div id="screen">
+                <main>
+                    <div id="left-pane">
+                        <div class="button-row ticket-seller">
+                            <button data-seller="zkm">ZKM Gdynia</button>
+                            <button data-seller="mzkzg">Metropolitalny</button>
+                        </div>
+                        <div class="button-row ticket-type zkm">
+                            <button data-type="single-trip">1-przejazdowy</button>
+                            <button data-type="one-hour">1-godzinny</button>
+                            <button data-type="one-day">24-godzinny</button>
+                        </div>
+                        <div class="button-row ticket-type mzkzg">
+                            <button data-type="single-trip">1-przejazdowy</button>
+                            <button data-type="one-day">24-godzinny</button>
+                            <button data-type="two-days">72-godzinny</button>
+                        </div>
+                        <div class="button-row ticket-zone single-trip">
+                            <button data-zone="0">Linie zwykłe<br />i nocne</button>
+                            <button data-zone="1">Linie zwykłe,<br />pospieszne i nocne</button>
+                        </div>
+                        <div class="button-row ticket-zone one-day">
+                            <button data-zone="2">Komunalny</button>
+                            <button data-zone="3">Kolejowo-<br />komunalny<br />2 organizatorów</button>
+                            <button data-zone="4">Kolejowo-<br />komunalny</button>
+                        </div>
+                        <div class="button-row ticket-zone two-days">
+                            <button data-zone="2">Komunalny</button>
+                            <button data-zone="4">Kolejowo-<br />komunalny</button>
+                        </div>
+                        <div class="button-row ticket-price">
+                            <button data-price="full">Normalny</button>
+                            <button data-price="reduced">Ulgowy</button>
+                        </div>
                     </div>
-                    <div class="button-row ticket-type zkm">
-                        <button data-type="single-trip">1-przejazdowy</button>
-                        <button data-type="one-hour">1-godzinny</button>
-                        <button data-type="one-day">24-godzinny</button>
-                    </div>
-                    <div class="button-row ticket-type mzkzg">
-                        <button data-type="single-trip">1-przejazdowy</button>
-                        <button data-type="one-day">24-godzinny</button>
-                        <button data-type="two-days">72-godzinny</button>
-                    </div>
-                    <div class="button-row ticket-zone single-trip">
-                        <button data-zone="0">Linie zwykłe<br />i nocne</button>
-                        <button data-zone="1">Linie zwykłe,<br />pospieszne i nocne</button>
-                    </div>
-                    <div class="button-row ticket-zone one-day">
-                        <button data-zone="2">Komunalny</button>
-                        <button data-zone="3">Kolejowo-<br />komunalny<br />2 organizatorów</button>
-                        <button data-zone="4">Kolejowo-<br />komunalny</button>
-                    </div>
-                    <div class="button-row ticket-zone two-days">
-                        <button data-zone="2">Komunalny</button>
-                        <button data-zone="4">Kolejowo-<br />komunalny</button>
-                    </div>
-                    <div class="button-row ticket-price">
-                        <button data-price="full">Normalny</button>
-                        <button data-price="reduced">Ulgowy</button>
-                    </div>
-                </div>
-                <div id="right-pane">
-                    <div id="ticket-desc">
-                        <h1>O bilecie</h1>
-                        <p>Jednoprzejazdowy na linie zwykłe i nocne<br />obowiązuje w pojazdach: ZKM w Gdyni</p>
-                        <p id="ticket-price">Cena: <span>3,80</span> zł</p>
-                    </div>
-                    <div id="confirmation">
-                        <div id="number-of-tickets">
-                            <h1>Liczba</h1>
-                            <div id="input">
-                                <button>-</button>
-                                <input type="text" value="1" readonly/>
-                                <button>+</button>
+                    <div id="right-pane">
+                        <div id="ticket-desc">
+                            <h1>O bilecie</h1>
+                            <p>Jednoprzejazdowy na linie zwykłe i nocne<br />obowiązuje w pojazdach: ZKM w Gdyni</p>
+                            <p id="ticket-price">Cena: <span>3,80</span> zł</p>
+                        </div>
+                        <div id="confirmation">
+                            <div id="number-of-tickets">
+                                <h1>Liczba</h1>
+                                <div id="input">
+                                    <button>-</button>
+                                    <input type="text" value="1" readonly/>
+                                    <button>+</button>
+                                </div>
                             </div>
+                            <div id="total-price">
+                                <p>Cena razem:</p>
+                                <p><span>7,60</span> zł</p>
+                            </div>
+                            <button id="confirm">Zatwierdź</button>
                         </div>
-                        <div id="total-price">
-                            <p>Cena razem:</p>
-                            <p><span>7,60</span> zł</p>
-                        </div>
-                        <button id="confirm">Zatwierdź</button>
                     </div>
-                </div>
-            </main>
+                </main>
+            </div>
         </div>
     </body>
 </html>

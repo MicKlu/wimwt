@@ -9,33 +9,35 @@
         <script type="text/javascript" src="scripts/paymentcash.js"></script>
     </head>
     <body>
-        <div id="screen">
-            <main>
-                <div id="left-pane">
-                    <div class="box" id="total-price">
-                        <h1>Do zapłaty</h1>
-                        <p><span>7,60</span> zł</p>
+        <div id="container">
+            <div id="screen">
+                <main>
+                    <div id="left-pane">
+                        <div class="box" id="total-price">
+                            <h1>Do zapłaty</h1>
+                            <p><span>7,60</span> zł</p>
+                        </div>
+                        <div class="box" id="paid">
+                            <h1>Wpłacono</h1>
+                            <p><span>2,00</span> zł</p>
+                        </div>
+                        <div class="box" id="remaining">
+                            <h1>Pozostało</h1>
+                            <p><span>5,60</span> zł</p>
+                        </div>
                     </div>
-                    <div class="box" id="paid">
-                        <h1>Wpłacono</h1>
-                        <p><span>2,00</span> zł</p>
+                    <div id="right-pane">
+                        <div class="box" id="remaining">
+                            <h1>Automat przyjmuje monety</h1>
+                            <p>10 gr, 20 gr, 50 gr<br />1 zł, 2 zł, 5 zł</p>
+                        </div>
+                        <div class="box" id="remaining">
+                            <h1>Automat przyjmuje banknoty</h1>
+                            <p>10 zł, 20 zł, 50 zł</p>
+                        </div>
                     </div>
-                    <div class="box" id="remaining">
-                        <h1>Pozostało</h1>
-                        <p><span>5,60</span> zł</p>
-                    </div>
-                </div>
-                <div id="right-pane">
-                    <div class="box" id="remaining">
-                        <h1>Automat przyjmuje monety</h1>
-                        <p>10 gr, 20 gr, 50 gr<br />1 zł, 2 zł, 5 zł</p>
-                    </div>
-                    <div class="box" id="remaining">
-                        <h1>Automat przyjmuje banknoty</h1>
-                        <p>10 zł, 20 zł, 50 zł</p>
-                    </div>
-                </div>
-            </main>
+                </main>
+            </div>
             <div id="panel">
                 <button id="button-10gr">10 gr</button>
                 <button id="button-20gr">20 gr</button>

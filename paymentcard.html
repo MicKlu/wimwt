@@ -9,24 +9,26 @@
         <script type="text/javascript" src="scripts/paymentcard.js"></script>
     </head>
     <body>
-        <div id="screen">
-            <main>
-                <div id="left-pane">
-                    <div class="box" id="total-price">
-                        <h1>Do zapłaty</h1>
-                        <p><span>7,60</span> zł</p>
+        <div id="container">
+            <div id="screen">
+                <main>
+                    <div id="left-pane">
+                        <div class="box" id="total-price">
+                            <h1>Do zapłaty</h1>
+                            <p><span>7,60</span> zł</p>
+                        </div>
+                        <div class="box" id="info">
+                            <p>Proszę umieścić kartę płatniczą<br />w czytniku i wprowadzić PIN<br /><br />lub<br /><br />przyłożyć kartę płatniczą<br />do czytnika kart zbliżeniowych</p>
+                        </div>
                     </div>
-                    <div class="box" id="info">
-                        <p>Proszę umieścić kartę płatniczą<br />w czytniku i wprowadzić PIN<br /><br />lub<br /><br />przyłożyć kartę płatniczą<br />do czytnika kart zbliżeniowych</p>
+                    <div id="right-pane">
+                        <div class="box" id="remaining">
+                            <h1>Automat obsługuje karty</h1>
+                            <p></p>
+                        </div>
                     </div>
-                </div>
-                <div id="right-pane">
-                    <div class="box" id="remaining">
-                        <h1>Automat obsługuje karty</h1>
-                        <p></p>
-                    </div>
-                </div>
-            </main>
+                </main>
+            </div>
             <div id="panel">
                 <button id="button-card">Zapłać</button>
             </div>
