@@ -16,7 +16,26 @@ $(function () {
 
     $("#confirm").click(onConfirmTicketClick);
 
-    $(".button-row.ticket-seller button").eq(0).click();
+    var selectedTickets = JSON.parse(window.sessionStorage.getItem("tickets"));
+    var ticketIndex = window.sessionStorage.getItem("ticketIndex");
+
+    if(ticketIndex == selectedTickets.length)
+        $(".button-row.ticket-seller button").eq(0).click();
+    else {
+        var seller = selectedTickets[ticketIndex].seller;
+        var type = selectedTickets[ticketIndex].type;
+        var zone = selectedTickets[ticketIndex].zone;
+        var price = selectedTickets[ticketIndex].price;
+        var numberOfTickets = selectedTickets[ticketIndex].tickets;
+        
+        $(".button-row.ticket-seller:visible " + '[data-seller="' + seller + '"]').click();
+        $(".button-row.ticket-type:visible " + '[data-type="' + type + '"]').click();
+        $(".button-row.ticket-zone:visible " + '[data-zone="' + zone + '"]').click();
+        $(".button-row.ticket-price:visible " + '[data-price="' + price + '"]').click();
+
+        $("#number-of-tickets #input input").val(numberOfTickets);
+        $("#number-of-tickets #input input").change();
+    }
 });
 
 function onTicketSellerClick(e) {
@@ -155,7 +174,6 @@ function onConfirmTicketClick() {
         ticketIndex = 0;
 
     selectedTickets[ticketIndex] = data;
-    console.log(data);
     window.sessionStorage.setItem("tickets", JSON.stringify(selectedTickets));
     window.sessionStorage.setItem("ticketIndex", ticketIndex);
 

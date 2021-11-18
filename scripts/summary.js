@@ -85,6 +85,7 @@ function onRemoveTicketClick(e) {
     window.sessionStorage.setItem("tickets", JSON.stringify(tickets));
     
     if(tickets.length < 1) {
+        window.sessionStorage.setItem("ticketIndex", 0);
         location.href = "buyticket.html";
         return;
     }
