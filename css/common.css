@@ -11,6 +11,7 @@
     --dim-color-light: rgba(0,0,0,0.3);
     --button-radius: 15px;
     --spearator-color: rgba(0, 0, 0, 0.5);
+    --popup-bg: #4e8eb1;
 }
 
 * {
@@ -99,9 +100,18 @@ main {
 
 .button-row button.selected,
 nav button:active,
-main button:active {
+main button:active,
+#pop-up button:active {
     background: var(--button-bg-selected);
     border: 4px inset var(--button-border-color);
+}
+
+.button-row button[disabled],
+nav button[disabled],
+main button[disabled],
+#pop-up button[disabled] {
+    background: #999;
+    border-color: #ccc;
 }
 
 .button-row button {
@@ -110,7 +120,8 @@ main button:active {
 }
 
 nav button,
-main button {
+main button,
+#pop-up button {
     border-radius: var(--button-radius);
     background: var(--button-bg);
     border: 4px outset var(--button-border-color);
@@ -155,6 +166,54 @@ p#ticket-price{
     font-size: 24px;
     position: absolute;
     bottom: 5px;
+}
+
+#pop-up {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dim-color);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#pop-up .container {
+    background: var(--popup-bg);
+    padding: 25px 50px;
+    border: 4px solid var(--button-bg-selected);
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px black;
+}
+
+#pop-up h1 {
+    text-align: center;
+    font-size: 44px;
+    margin-bottom: 30px;
+}
+
+#pop-up #zone-buttons.button-row {
+    display: flex;
+    flex-flow: column;
+    height: initial;
+    align-items: center;
+}
+
+#pop-up #zone-buttons button {
+    text-align: left;
+    height: 75px;
+    font-size: 20px;
+    padding: 0 15px;
+    margin: 10px 0;
+}
+
+#pop-up #zone-buttons #popup-cancel {
+    text-align: center;
+    width: 150px;
+    height: 60px;
+    margin-top: 30px;
 }
 
 #panel {

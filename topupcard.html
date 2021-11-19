@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ZKM Gdynia – Automat biletowy</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="css/topupcard.css" />
+        <script type="text/javascript" src="scripts/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="scripts/tickets.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/topupcard.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="screen">
+                <main>
+                    <div id="left-pane">
+                        <div class="button-row ticket-owner">
+                            <button data-owner="personal">Imienny</button>
+                            <button data-owner="bearer">Na okaziciela</button>
+                        </div>
+                        <div class="button-row ticket-type personal">
+                            <button data-type="monthly">Miesięczny</button>
+                            <button data-type="semestral">Semestralny</button>
+                        </div>
+                        <div class="button-row ticket-period monthly">
+                            <button data-period="weekdays">Ważny od<br />pon. do pt.</button>
+                            <button data-period="weekly">Ważny cały<br />tydzień</button>
+                        </div>
+                        <div class="button-row ticket-period semestral">
+                            <button data-period="4-months">4-miesięczny</button>
+                            <button data-period="5-months">5-miesięczny</button>
+                        </div>
+                        <div class="button-row ticket-zone">
+                            <button><p>Strefa...</p><p>Proszę wybrać strefę</p></button>
+                        </div>
+                    </div>
+                    <div id="right-pane">
+                        <div id="ticket-desc">
+                            <h1>O bilecie</h1>
+                            <p>Imienny, Miesięczny, Ważny od pon. do pt.<br />obowiązuje w pojazdach: ZKM w Gdyni</p>
+                            <p id="ticket-price">Cena: <span>78,00</span> zł</p>
+                        </div>
+                        <div id="confirmation">
+                            <!-- <div id="calendar">
+                                <h1>Ważny od</h1>
+                                <div id="input">
+                                    <div class="day">
+                                        <button>+</button>
+                                        <input type="text" value="31" readonly/>
+                                        <button>-</button>
+                                    </div>
+                                    <div class="month">
+                                        <button>+</button>
+                                        <input type="text" value="12" readonly/>
+                                        <button>-</button>
+                                    </div>
+                                    <div class="year">
+                                        <button>+</button>
+                                        <input type="text" value="2021" readonly/>
+                                        <button>-</button>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <button id="confirm">Zatwierdź</button>
+                        </div>
+                    </div>
+                </main>
+                <div id="pop-up">
+                    <div class="container">
+                        <h1>Wybierz strefę</h1>
+                        <div id="zone-buttons" class="button-row">
+                            <button data-zone="0">Zwykłe i nocne w granicach Gdyni</button>
+                            <button data-zone="1">Zwykłe, pospieszne i nocne w granicach Gdyni</button>
+                            <button data-zone="2">Zwykłe, pospieszne i nocne w granicach Sopotu albo Rumi albo gm. Kosakowo<br />albo gm. Żukowo albo gm. Szemud albo gm. Wejherowo</button>
+                            <button data-zone="3">Zwykłe, pospieszne i nocne w granicach Rumi, Redy i miasta Wejherowa<br />albo gm. Wejherowo i Rumi</button>
+                            <button data-zone="4">Zwykłe, pospieszne i nocne w obrębie sieci komunikacyjnej<br />[w tym linie G, N1, 101 i 171]</button>
+                            <button id="popup-cancel">Anuluj</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

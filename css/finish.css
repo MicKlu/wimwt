@@ -5,10 +5,15 @@ main {
     align-items: center;
     justify-items: center;
     text-align: center;
+    height: 688px;
 }
 
 main > div {
     flex-grow: 1;
+    margin: 0 30px;
+    padding: 200px 0;
+    background: var(--dim-color);
+    border-radius: 5px;
 }
 
 main h1 {

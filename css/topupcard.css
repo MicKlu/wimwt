@@ -1,0 +1,45 @@
+@import "buyticket.css";
+
+.ticket-type button {
+    font-size: inherit;
+}
+
+.button-row:not(.ticket-seller) {
+    display: flex;
+}
+
+.button-row:not(.ticket-owner) {
+    display: none;
+}
+
+.ticket-zone button p:last-child {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+#ticket-desc {
+    height: 400px;
+}
+
+#calendar {
+    text-align: center;
+}
+
+#calendar h1 {
+    font-size: 36px;
+}
+
+#input > div {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+#input input {
+    margin: 10px 0;
+}
+
+#input input {
+    width: 60px;
+    height: 60px;
+}

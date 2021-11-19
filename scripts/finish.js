@@ -18,6 +18,7 @@ function onPrintingTicketsEnd() {
 
 function onChangeEnd() {
     showGoodbyeMessage();
+    setTimeout(onGoodbyeEnd, 5000);
 }
 
 function onGoodbyeEnd() {

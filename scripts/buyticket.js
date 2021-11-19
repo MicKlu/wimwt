@@ -34,8 +34,8 @@ $(function () {
         $(".button-row.ticket-price:visible " + '[data-price="' + price + '"]').click();
 
         $("#number-of-tickets #input input").val(numberOfTickets);
-        $("#number-of-tickets #input input").change();
     }
+    increaseNumberOfTickets(0);
 });
 
 function onTicketSellerClick(e) {
@@ -101,12 +101,6 @@ function onTicketPriceClick(e) {
     updateDescription();
 }
 
-function showButtonRow(rowHideClasses, rowShowClass) {
-    for(var i = 0; i < rowHideClasses.length; i++)
-        $(".button-row" + rowHideClasses[i]).hide();
-    $(".button-row" + rowShowClass).css("display", "flex");
-}
-
 function updateDescription() {
     data = {}
     $(".button-row:visible button.selected").each((i, self) => {
@@ -152,12 +146,13 @@ function onTicketDecreaseClick() {
 function increaseNumberOfTickets(relativeNumber) {
     var input = $("#number-of-tickets #input input");
     var currentValue = parseInt(input.val());
+    var buttons = $("#number-of-tickets #input button").prop("disabled", false);
     
-    if(currentValue + relativeNumber < 1)
-        return;
+    if(currentValue + relativeNumber <= 1)
+        buttons.eq(0).prop("disabled", true);
     
-    if(currentValue + relativeNumber > 99)
-        return;
+    if(currentValue + relativeNumber >= 99)
+        buttons.eq(1).prop("disabled", true);
     
     input.val(currentValue + relativeNumber);
     input.change();

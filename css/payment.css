@@ -26,6 +26,14 @@ main {
     margin-top: 170px;
 }
 
+#right-pane h1 {
+    margin-bottom: 15px;
+}
+
+#right-pane div img {
+    width: 100px;
+}
+
 #left-pane #info p {
     font-size: 28px;
 }

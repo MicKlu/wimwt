@@ -33,8 +33,10 @@ main {
 }
 
 #input {
-    display: inline-block;
+    display: flex;
     margin-top: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 #input button {
@@ -46,6 +48,10 @@ main {
     text-align: center;
     width: 180px;
     height: 70px;
+    font-size: 42px;
+    margin: 0 10px;
+    background: var(--dim-color-light);
+    color: var(--text-color);
 }
 
 #total-price {
