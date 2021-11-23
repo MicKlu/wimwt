@@ -6,8 +6,7 @@ $(function () {
     });
     $("#top-up-card").click(() => {
         $("#insert-card").css("display", "flex");
-        
-        // location.href = "topupcard.html";
+        awaitCardInsertion();
     });
     $(".popup-cancel").click((e) => {
         $(e.currentTarget).parents(".pop-up").hide();
@@ -110,4 +109,27 @@ function onConfirmTicketClick() {
     window.sessionStorage.setItem("ticketIndex", ticketIndex);
 
     location.href = "summary.html";
+}
+
+function awaitCardInsertion() {
+    if(window.sessionStorage.getItem("cardType") === null) {
+        
+        if(!$("#insert-card:visible").length)
+            return;
+
+        setTimeout(() => {
+            awaitCardInsertion();
+        }, 1000);
+        
+        return;
+    }
+
+    $("#panel button").prop("disabled", true);
+    $("#insert-card h1").text("Wykryto kartę miejską");
+    $("#insert-card p").text("Odczytywanie danych z karty...");
+    $("#insert-card button").remove();
+
+    setTimeout(() => {
+        location.href = "topupcard.html";
+    }, 1000);
 }
