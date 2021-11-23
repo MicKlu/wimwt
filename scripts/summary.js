@@ -40,8 +40,8 @@ function fetchSummaryTable() {
         }
         
         var name = [];
-        name.push(TICKETS[tickets[i].seller].name);
-        name.push(TICKETS[tickets[i].seller][tickets[i].type].name);
+        name.push(TICKETS["single"][tickets[i].seller].name);
+        name.push(TICKETS["single"][tickets[i].seller][tickets[i].type].name);
         if(tickets[i].price == "full")
             name.push("Normalny");
         else
@@ -50,7 +50,7 @@ function fetchSummaryTable() {
         name = name.join(", ");
         
         if(tickets[i].seller == "mzkzg")
-            name += "<br />" + TICKETS[tickets[i].seller][tickets[i].type].zones[tickets[i].zone].name;
+            name += "<br />" + TICKETS["single"][tickets[i].seller][tickets[i].type].zones[tickets[i].zone].name;
     
         row.append($("<td></td>").text(i+1));
         row.append($("<td></td>").html(name));

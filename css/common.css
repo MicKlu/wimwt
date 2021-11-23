@@ -47,7 +47,6 @@ div {
     box-sizing: border-box;
     margin: 10px auto 0;
     position: relative;
-    background-image: var(--bg-image);
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow: hidden;
@@ -101,7 +100,8 @@ main {
 .button-row button.selected,
 nav button:active,
 main button:active,
-#pop-up button:active {
+.pop-up button:active,
+.pop-up button.selected {
     background: var(--button-bg-selected);
     border: 4px inset var(--button-border-color);
 }
@@ -109,7 +109,7 @@ main button:active,
 .button-row button[disabled],
 nav button[disabled],
 main button[disabled],
-#pop-up button[disabled] {
+.pop-up button[disabled] {
     background: #999;
     border-color: #ccc;
 }
@@ -121,7 +121,7 @@ main button[disabled],
 
 nav button,
 main button,
-#pop-up button {
+.pop-up button {
     border-radius: var(--button-radius);
     background: var(--button-bg);
     border: 4px outset var(--button-border-color);
@@ -168,7 +168,7 @@ p#ticket-price{
     bottom: 5px;
 }
 
-#pop-up {
+.pop-up {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -180,7 +180,7 @@ p#ticket-price{
     justify-content: center;
 }
 
-#pop-up .container {
+.pop-up .container {
     background: var(--popup-bg);
     padding: 25px 50px;
     border: 4px solid var(--button-bg-selected);
@@ -188,28 +188,28 @@ p#ticket-price{
     box-shadow: 5px 5px 10px black;
 }
 
-#pop-up h1 {
+.pop-up h1 {
     text-align: center;
     font-size: 44px;
     margin-bottom: 30px;
 }
 
-#pop-up #zone-buttons.button-row {
+.pop-up #zone-buttons.button-row {
     display: flex;
     flex-flow: column;
     height: initial;
     align-items: center;
 }
 
-#pop-up #zone-buttons button {
+.pop-up #zone-buttons button {
     text-align: left;
-    height: 75px;
-    font-size: 20px;
+    height: 80px;
+    font-size: 24px;
     padding: 0 15px;
     margin: 10px 0;
 }
 
-#pop-up #zone-buttons #popup-cancel {
+.pop-up #zone-buttons #popup-cancel {
     text-align: center;
     width: 150px;
     height: 60px;

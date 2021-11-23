@@ -1,5 +1,9 @@
 @import "common.css";
 
+#screen {
+    background-image: var(--bg-image);
+}
+
 #start-upper-row {
     margin: 60px 20px 0;
 }

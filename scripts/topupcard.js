@@ -9,7 +9,8 @@ $(function () {
     $(".button-row.ticket-type button").click(onTicketTypeClick);
     $(".button-row.ticket-period button").click(onTicketPeriodClick);
     $(".button-row.ticket-zone button").click(onTicketZoneClick);
-    $("#pop-up #popup-cancel").click(onTicketZoneCancelClick);
+    $(".pop-up #popup-cancel").click(onTicketZoneCancelClick);
+    $(".pop-up #zone-buttons button:not(:last-child)").click(onTicketZoneSelectClick)
     
 
     $("#confirm").click(onConfirmTicketClick);
@@ -32,6 +33,11 @@ function onTicketOwnerClick(e) {
     
     if(nextRowClass == "bearer") {
         showButtonRow([".ticket-type", ".ticket-period", ".ticket-zone"], ".ticket-zone");
+        var selectedButton = $("#zone-buttons.button-row button.selected");
+        if(selectedButton.length)
+            selectedButton.click();
+        else
+            $("#zone-buttons.button-row button").eq(0).click();
     }
     else {
         showButtonRow([".ticket-type", ".ticket-period", ".ticket-zone"], "." + nextRowClass);
@@ -68,16 +74,71 @@ function onTicketPeriodClick(e) {
     buttons.filter('[data-period="' + nextRowClass + '"]').addClass("selected");
 
     showButtonRow([".ticket-zone"], ".ticket-zone");
+
+    var selectedButton = $("#zone-buttons.button-row button.selected");
+    if(selectedButton.length)
+        selectedButton.click();
+    else
+        $("#zone-buttons.button-row button").eq(0).click();
 }
 
 function onTicketZoneClick(e) {
-    $("#pop-up").css("display", "flex");
+    $(".pop-up").css("display", "flex");
 }
 
 function onTicketZoneCancelClick(e) {
-    $("#pop-up").hide();
+    $(".pop-up").hide();
+}
+
+function onTicketZoneSelectClick(e) {
+    var buttons = $("#zone-buttons.button-row button");
+    var button = $(this);
+    $(".button-row.ticket-zone p:last-child").text(button.text());
+    buttons.removeClass("selected");
+    button.addClass("selected");
+    $(".pop-up").hide();
+
+    updateDescription();
+}
+
+function updateDescription() {
+    data = {}
+    $(".button-row:visible button.selected, #zone-buttons.button-row button.selected").each((i, self) => {
+        data = {...data, ...$(self).data()};
+    });
+
+    var price;
+    var desc;
+
+    var cardType = window.sessionStorage.getItem("cardType");
+
+    console.log(data);
+
+    var desc = [];
+    desc.push(TICKETS["seasonal"].zones[data.zone].owner[data.owner].name);
+
+    if(data.owner == "personal") {
+        price = TICKETS["seasonal"].zones[data.zone].owner[data.owner].type[data.type].period[data.period].price[cardType];
+        desc.push(TICKETS["seasonal"].zones[data.zone].owner[data.owner].type[data.type].name);
+        desc.push(TICKETS["seasonal"].zones[data.zone].owner[data.owner].type[data.type].period[data.period].name);
+    }
+    else
+        price = TICKETS["seasonal"].zones[data.zone].owner[data.owner].price.full;
+    
+
+    if(cardType == "full")
+        desc.push("Normalny");
+    else
+        desc.push("Ulgowy");
+
+    $("#ticket-desc p:first").html(desc.join(", ") + "<br />" + TICKETS["seasonal"].zones[data.zone].name);
+    $("#ticket-price span").text(formatPrice(price));
+    $("#ticket-price span").data("value", price);
 }
 
 function onConfirmTicketClick(e) {
-    
+    var selectedTickets = [data];
+    window.sessionStorage.setItem("tickets", JSON.stringify(selectedTickets));
+
+    location.href = "summary.html";
 }

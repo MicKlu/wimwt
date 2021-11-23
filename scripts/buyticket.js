@@ -105,18 +105,18 @@ function updateDescription() {
     data = {}
     $(".button-row:visible button.selected").each((i, self) => {
         data = {...data, ...$(self).data()};
-    })
+    });
     
     var price;
     var desc;
 
     if(data.seller == "zkm") {
-        price = TICKETS[data.seller][data.type].price[data.price];
-        desc = TICKETS[data.seller][data.type].desc;
+        price = TICKETS["single"][data.seller][data.type].price[data.price];
+        desc = TICKETS["single"][data.seller][data.type].desc;
     }
     else {
-        price = TICKETS[data.seller][data.type].zones[data.zone].price[data.price];
-        desc = TICKETS[data.seller][data.type].zones[data.zone].desc;
+        price = TICKETS["single"][data.seller][data.type].zones[data.zone].price[data.price];
+        desc = TICKETS["single"][data.seller][data.type].zones[data.zone].desc;
     }
     
     $("#ticket-desc p:first").html(desc);
