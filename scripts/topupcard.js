@@ -11,18 +11,30 @@ $(function () {
     $(".button-row.ticket-zone button").click(onTicketZoneClick);
     $(".pop-up #popup-cancel").click(onTicketZoneCancelClick);
     $(".pop-up #zone-buttons button:not(:last-child)").click(onTicketZoneSelectClick)
-    
 
     $("#confirm").click(onConfirmTicketClick);
 
     var selectedTickets = JSON.parse(window.sessionStorage.getItem("tickets"));
-    var ticketIndex = window.sessionStorage.getItem("ticketIndex");
+    var cardType = window.sessionStorage.getItem("cardType");
 
-    if(selectedTickets === null || ticketIndex == selectedTickets.length)
+    if(selectedTickets === null || selectedTickets.length < 1)
         $(".button-row.ticket-owner button").eq(0).click();
     else {
+        var owner = selectedTickets[0].owner;
+        var type = selectedTickets[0].type;
+        var period = selectedTickets[0].period;
+        var zone = selectedTickets[0].zone;
         
+        $(".button-row.ticket-owner:visible " + '[data-owner="' + owner + '"]').click();
+        $(".button-row.ticket-type:visible " + '[data-type="' + type + '"]').click();
+        $(".button-row.ticket-period:visible " + '[data-period="' + period + '"]').click();
+        $("#zone-buttons.button-row " + '[data-zone="' + zone + '"]').click();
     }
+
+    if(cardType == "full")
+        $('button[data-type="semestral"]').remove();
+    else if(cardType == "reduced")
+        $('button[data-owner="bearer"]').remove();
 });
 
 function onTicketOwnerClick(e) {

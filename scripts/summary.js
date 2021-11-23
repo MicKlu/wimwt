@@ -39,35 +39,60 @@ function fetchSummaryTable() {
             $(".button-next").css("display", "none");
         }
         
+        var cardType = window.sessionStorage.getItem("cardType");
+        var priceType = "";
+        var price = 0;
+
         var name = [];
-        name.push(TICKETS["single"][tickets[i].seller].name);
-        name.push(TICKETS["single"][tickets[i].seller][tickets[i].type].name);
-        if(tickets[i].price == "full")
+
+        if(cardType === null) {
+            price = tickets[i].totalPrice;
+            name.push(TICKETS["single"][tickets[i].seller].name);
+            name.push(TICKETS["single"][tickets[i].seller][tickets[i].type].name);
+            priceType = tickets[i].price
+        }
+        else {
+            name.push(TICKETS["seasonal"].zones[tickets[i].zone].owner[tickets[i].owner].name);
+            if(tickets[i].owner == "personal") {
+                price = TICKETS["seasonal"].zones[tickets[i].zone].owner[tickets[i].owner].type[tickets[i].type].period[tickets[i].period].price[cardType];
+                name.push(TICKETS["seasonal"].zones[tickets[i].zone].owner[tickets[i].owner].type[tickets[i].type].name);
+                name.push(TICKETS["seasonal"].zones[tickets[i].zone].owner[tickets[i].owner].type[tickets[i].type].period[tickets[i].period].name);
+            }
+            else
+            price = TICKETS["seasonal"].zones[tickets[i].zone].owner[tickets[i].owner].price[cardType];
+            priceType = cardType;
+        }
+        
+        if(priceType == "full")
             name.push("Normalny");
         else
             name.push("Ulgowy");
         
         name = name.join(", ");
         
-        if(tickets[i].seller == "mzkzg")
+        if(cardType === null && tickets[i].seller == "mzkzg")
             name += "<br />" + TICKETS["single"][tickets[i].seller][tickets[i].type].zones[tickets[i].zone].name;
+        else if(cardType !== null)
+            name += "<br />" + TICKETS["seasonal"].zones[tickets[i].zone].name;
     
         row.append($("<td></td>").text(i+1));
         row.append($("<td></td>").html(name));
         row.append($("<td></td>").text(tickets[i].tickets));
-        row.append($("<td></td>").text(formatPrice(tickets[i].totalPrice) + " zł"));
+        row.append($("<td></td>").text(formatPrice(price) + " zł"));
         row.append(getChangeButton());
         row.append(getRemoveButton());
         
         tableFooter.before(row);
 
-        totalPrice += tickets[i].totalPrice;
+        totalPrice += price;
     }
 
     $(".total-price td:first").text(formatPrice(totalPrice) + " zł");
 
     $("#summary button.button-edit").click(onEditTicketClick);
     $("#summary button.button-remove").click(onRemoveTicketClick);
+
+    updateIfSeasonal();
 }
 
 function getChangeButton() {
@@ -94,9 +119,14 @@ function onAddTicketClick(e) {
 }
 
 function onEditTicketClick(e) {
-    var ticketIndex = $("#summary .button-edit").index($(this));
-    window.sessionStorage.setItem("ticketIndex", ticketIndex);
-    location.href = "buyticket.html";
+    var cardType = window.sessionStorage.getItem("cardType");
+    if(cardType === null) {
+        var ticketIndex = $("#summary .button-edit").index($(this));
+        window.sessionStorage.setItem("ticketIndex", ticketIndex);
+        location.href = "buyticket.html";
+    }
+    else
+        location.href = "topupcard.html";
 }
 
 function onRemoveTicketClick(e) {
@@ -107,7 +137,13 @@ function onRemoveTicketClick(e) {
     
     if(tickets.length < 1) {
         window.sessionStorage.setItem("ticketIndex", 0);
-        location.href = "buyticket.html";
+
+        var cardType = window.sessionStorage.getItem("cardType");
+        if(cardType === null)
+            location.href = "buyticket.html";
+        else
+            location.href = "topupcard.html";
+        
         return;
     }
 
@@ -140,4 +176,23 @@ function onNextButtonClick(e) {
 
     if(indexToShow == trs.length - 1)
         $(this).hide();
+}
+
+function updateIfSeasonal() {
+    var cardType = window.sessionStorage.getItem("cardType");
+    
+    if(cardType === null)
+        return;
+    
+    $("#add-ticket").remove();
+    var summaryTable = $("#summary");
+    var rows = summaryTable.find("tr:not(.total-price)");
+    var cells = rows.find("th, td");
+    cells.filter(":nth-child(1), :nth-child(3)").remove();
+    cells.filter("").remove();
+
+    var totalPriceRow = summaryTable.find(".total-price");
+    totalPriceRow.find("th").attr("colspan", 1);
+
+    summaryTable.addClass("seasonal");
 }

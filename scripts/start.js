@@ -7,13 +7,19 @@ $(function () {
     $("#top-up-card").click(() => {
         location.href = "topupcard.html";
     });
-    $("#panel #button-card-full").click(() => {
+    $("#panel #button-card-full").click((e) => {
+        $("#panel button").prop("disabled", false);
+        $(e.currentTarget).prop("disabled", true);
         window.sessionStorage.setItem("cardType", "full");
     });
-    $("#panel #button-card-reduced").click(() => {
+    $("#panel #button-card-reduced").click((e) => {
+        $("#panel button").prop("disabled", false);
+        $(e.currentTarget).prop("disabled", true);
         window.sessionStorage.setItem("cardType", "reduced");
     });
-    $("#panel #button-card-eject").click(() => {
+    $("#panel #button-card-eject").click((e) => {
+        $("#panel button").prop("disabled", false);
+        $(e.currentTarget).prop("disabled", true);
         window.sessionStorage.removeItem("cardType");
     });
 

@@ -12,7 +12,7 @@ main {
 
 #summary th,
 #summary td {
-    font-size: 20px;
+    font-size: 24px;
     vertical-align: middle;
     padding: 7px 10px;
     background: var(--dim-color);
@@ -20,8 +20,15 @@ main {
 }
 
 #summary th:nth-child(2),
-#summary td:nth-child(2) {
+#summary td:nth-child(2),
+#summary.seasonal th:nth-child(1),
+#summary.seasonal td:nth-child(1) {
     text-align: left;
+}
+
+#summary.seasonal th:nth-child(2),
+#summary.seasonal td:nth-child(2) {
+    text-align: center;
 }
 
 #summary th,
@@ -56,6 +63,9 @@ main {
     text-align: left;
 }
 
+#summary .total-price td:nth-child(2) {
+    min-width: 200px;
+}
 #summary .total-price td {
     font-size: 40px;
     text-align: center;
