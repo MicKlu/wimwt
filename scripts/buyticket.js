@@ -10,9 +10,9 @@ $(function () {
     $(".button-row.ticket-zone button").click(onTicketZoneClick);
     $(".button-row.ticket-price button").click(onTicketPriceClick);
     
-    $("#number-of-tickets #input button:first").click(onTicketDecreaseClick);
-    $("#number-of-tickets #input input").change(onNumberOfTicketsChange);
-    $("#number-of-tickets #input button:last").click(onTicketIncreaseClick);
+    $(".number-of-tickets .input button:first").click(onTicketDecreaseClick);
+    $(".number-of-tickets .input input").change(onNumberOfTicketsChange);
+    $(".number-of-tickets .input button:last").click(onTicketIncreaseClick);
 
     $("#confirm").click(onConfirmTicketClick);
 
@@ -33,7 +33,7 @@ $(function () {
         $(".button-row.ticket-zone:visible " + '[data-zone="' + zone + '"]').click();
         $(".button-row.ticket-price:visible " + '[data-price="' + price + '"]').click();
 
-        $("#number-of-tickets #input input").val(numberOfTickets);
+        $(".number-of-tickets .input input").val(numberOfTickets);
     }
     increaseNumberOfTickets(0);
 });
@@ -122,7 +122,7 @@ function updateDescription() {
     $("#ticket-desc p:first").html(desc);
     $("#ticket-price span").text(formatPrice(price));
     $("#ticket-price span").data("value", price);
-    $("#number-of-tickets #input input").change();
+    $(".number-of-tickets .input input").change();
 }
 
 function onNumberOfTicketsChange(e) {
@@ -130,7 +130,7 @@ function onNumberOfTicketsChange(e) {
     var numberOfTickets = parseInt(input.val());
     var price = $("#ticket-price span").data("value");
     var totalPrice = price * numberOfTickets;
-    $("#total-price span").text(formatPrice(totalPrice));
+    $(".total-price span").text(formatPrice(totalPrice));
     data.tickets = numberOfTickets;
     data.totalPrice = totalPrice;
 }
@@ -144,9 +144,9 @@ function onTicketDecreaseClick() {
 }
 
 function increaseNumberOfTickets(relativeNumber) {
-    var input = $("#number-of-tickets #input input");
+    var input = $(".number-of-tickets .input input");
     var currentValue = parseInt(input.val());
-    var buttons = $("#number-of-tickets #input button").prop("disabled", false);
+    var buttons = $(".number-of-tickets .input button").prop("disabled", false);
     
     if(currentValue + relativeNumber <= 1)
         buttons.eq(0).prop("disabled", true);

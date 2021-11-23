@@ -19,54 +19,24 @@ main {
     font-size: 20px;
 }
 
-#confirmation {
-    padding: 30px 5px 0;
-    text-align: center;
-}
-
-#number-of-tickets {
-    text-align: center;
-}
-
-#number-of-tickets h1 {
-    font-size: 36px;
-}
-
-#input {
-    display: flex;
-    margin-top: 20px;
-    align-items: center;
-    justify-content: center;
-}
-
-#input button {
-    width: 60px;
-    height: 60px;
-}
-
-#input input {
-    text-align: center;
-    width: 180px;
-    height: 70px;
-    font-size: 42px;
-    margin: 0 10px;
-    background: var(--dim-color-light);
-    color: var(--text-color);
-}
-
-#total-price {
+.total-price {
     display: flex;
     align-items: center;
     margin-top: 30px;
 }
 
-#total-price p:first-child {
+.total-price p:first-child {
     flex-grow: 1;
     text-align: left;
 }
 
-#total-price p:last-child {
+.total-price p:last-child {
     font-size: 48px;
+}
+
+#confirmation {
+    padding: 30px 5px 0;
+    text-align: center;
 }
 
 #confirm {

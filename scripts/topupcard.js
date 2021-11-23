@@ -9,7 +9,7 @@ $(function () {
     $(".button-row.ticket-type button").click(onTicketTypeClick);
     $(".button-row.ticket-period button").click(onTicketPeriodClick);
     $(".button-row.ticket-zone button").click(onTicketZoneClick);
-    $(".pop-up #popup-cancel").click(onTicketZoneCancelClick);
+    $(".pop-up .popup-cancel").click(onTicketZoneCancelClick);
     $(".pop-up #zone-buttons button:not(:last-child)").click(onTicketZoneSelectClick)
 
     $("#confirm").click(onConfirmTicketClick);

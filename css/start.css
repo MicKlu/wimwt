@@ -20,3 +20,34 @@
     margin: 0 70px;
     height: 300px;
 }
+
+.pop-up .button-row button {
+    text-align: center;
+    width: 180px;
+    height: 60px;
+    margin-top: 30px;
+}
+
+.number-of-tickets .total-price {
+    text-align: center;
+}
+
+.total-price {
+    display: flex;
+    align-items: center;
+    margin: 30px 250px 0;
+}
+
+.total-price p:first-child {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.total-price p:last-child {
+    font-size: 48px;
+}
+
+#insert-card p {
+    text-align: center;
+    margin: 45px 0 15px;
+}

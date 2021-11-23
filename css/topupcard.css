@@ -32,17 +32,17 @@
     font-size: 36px;
 }
 
-#input > div {
+.input > div {
     display: flex;
     flex-direction: column;
     margin: 0 10px;
 }
 
-#input input {
+.input input {
     margin: 10px 0;
 }
 
-#input input {
+.input input {
     width: 60px;
     height: 60px;
 }

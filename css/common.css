@@ -186,6 +186,7 @@ p#ticket-price{
     border: 4px solid var(--button-bg-selected);
     border-radius: 15px;
     box-shadow: 5px 5px 10px black;
+    min-width: 900px;
 }
 
 .pop-up h1 {
@@ -209,7 +210,7 @@ p#ticket-price{
     margin: 10px 0;
 }
 
-.pop-up #zone-buttons #popup-cancel {
+.pop-up #zone-buttons .popup-cancel {
     text-align: center;
     width: 150px;
     height: 60px;
@@ -231,4 +232,36 @@ p#ticket-price{
 
 #panel button {
     margin: 5px 0;
+}
+
+.number-of-tickets {
+    text-align: center;
+}
+
+.number-of-tickets h1,
+.number-of-tickets h2 {
+    font-weight: normal;
+    font-size: 36px;
+}
+
+.input {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.input button {
+    width: 60px;
+    height: 60px;
+}
+
+.input input {
+    text-align: center;
+    width: 180px;
+    height: 70px;
+    font-size: 42px;
+    margin: 0 10px;
+    background: var(--dim-color-light);
+    color: var(--text-color);
 }
