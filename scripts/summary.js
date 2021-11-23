@@ -41,12 +41,10 @@ function fetchSummaryTable() {
         
         var cardType = window.sessionStorage.getItem("cardType");
         var priceType = "";
-        var price = 0;
 
         var name = [];
 
         if(cardType === null) {
-            price = tickets[i].totalPrice;
             name.push(TICKETS["single"][tickets[i].seller].name);
             name.push(TICKETS["single"][tickets[i].seller][tickets[i].type].name);
             priceType = tickets[i].price
@@ -54,12 +52,10 @@ function fetchSummaryTable() {
         else {
             name.push(TICKETS["seasonal"].zones[tickets[i].zone].owner[tickets[i].owner].name);
             if(tickets[i].owner == "personal") {
-                price = TICKETS["seasonal"].zones[tickets[i].zone].owner[tickets[i].owner].type[tickets[i].type].period[tickets[i].period].price[cardType];
                 name.push(TICKETS["seasonal"].zones[tickets[i].zone].owner[tickets[i].owner].type[tickets[i].type].name);
                 name.push(TICKETS["seasonal"].zones[tickets[i].zone].owner[tickets[i].owner].type[tickets[i].type].period[tickets[i].period].name);
             }
             else
-            price = TICKETS["seasonal"].zones[tickets[i].zone].owner[tickets[i].owner].price[cardType];
             priceType = cardType;
         }
         
@@ -78,13 +74,13 @@ function fetchSummaryTable() {
         row.append($("<td></td>").text(i+1));
         row.append($("<td></td>").html(name));
         row.append($("<td></td>").text(tickets[i].tickets));
-        row.append($("<td></td>").text(formatPrice(price) + " zł"));
+        row.append($("<td></td>").text(formatPrice(tickets[i].totalPrice) + " zł"));
         row.append(getChangeButton());
         row.append(getRemoveButton());
         
         tableFooter.before(row);
 
-        totalPrice += price;
+        totalPrice += tickets[i].totalPrice;
     }
 
     $(".total-price td:first").text(formatPrice(totalPrice) + " zł");

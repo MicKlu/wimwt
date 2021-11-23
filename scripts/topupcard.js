@@ -146,6 +146,7 @@ function updateDescription() {
     $("#ticket-desc p:first").html(desc.join(", ") + "<br />" + TICKETS["seasonal"].zones[data.zone].name);
     $("#ticket-price span").text(formatPrice(price));
     $("#ticket-price span").data("value", price);
+    data.totalPrice = price;
 }
 
 function onConfirmTicketClick(e) {
