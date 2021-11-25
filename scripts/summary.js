@@ -110,16 +110,14 @@ function getRemoveButton() {
 function onAddTicketClick(e) {
     var tickets = JSON.parse(window.sessionStorage.getItem("tickets"));
     var ticketIndex = tickets.length;
-    window.sessionStorage.setItem("ticketIndex", ticketIndex);
-    location.href = "buyticket.html";
+    location.href = "buyticket.html?t=" + ticketIndex;
 }
 
 function onEditTicketClick(e) {
     var cardType = window.sessionStorage.getItem("cardType");
     if(cardType === null) {
         var ticketIndex = $("#summary .button-edit").index($(this));
-        window.sessionStorage.setItem("ticketIndex", ticketIndex);
-        location.href = "buyticket.html";
+        location.href = "buyticket.html?t=" + ticketIndex;
     }
     else
         location.href = "topupcard.html";
@@ -132,11 +130,9 @@ function onRemoveTicketClick(e) {
     window.sessionStorage.setItem("tickets", JSON.stringify(tickets));
     
     if(tickets.length < 1) {
-        window.sessionStorage.setItem("ticketIndex", 0);
-
         var cardType = window.sessionStorage.getItem("cardType");
         if(cardType === null)
-            location.href = "buyticket.html";
+            location.href = "buyticket.html?t=0";
         else
             location.href = "topupcard.html";
         

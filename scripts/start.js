@@ -36,7 +36,6 @@ $(function () {
     });
 
     window.sessionStorage.removeItem("tickets");
-    window.sessionStorage.removeItem("ticketIndex");
     window.sessionStorage.removeItem("change");
     window.sessionStorage.removeItem("cardType");
 });
@@ -106,7 +105,6 @@ function onConfirmTicketClick() {
     var ticketIndex = 0;
 
     window.sessionStorage.setItem("tickets", JSON.stringify(selectedTickets));
-    window.sessionStorage.setItem("ticketIndex", ticketIndex);
 
     location.href = "summary.html";
 }

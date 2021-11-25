@@ -17,7 +17,7 @@ $(function () {
     $("#confirm").click(onConfirmTicketClick);
 
     var selectedTickets = JSON.parse(window.sessionStorage.getItem("tickets"));
-    var ticketIndex = window.sessionStorage.getItem("ticketIndex");
+    var ticketIndex = getTicketIndex();
 
     if(selectedTickets === null || ticketIndex == selectedTickets.length)
         $(".button-row.ticket-seller button").eq(0).click();
@@ -160,7 +160,7 @@ function increaseNumberOfTickets(relativeNumber) {
 
 function onConfirmTicketClick() {
     var selectedTickets = JSON.parse(window.sessionStorage.getItem("tickets"));
-    var ticketIndex = window.sessionStorage.getItem("ticketIndex");
+    var ticketIndex = getTicketIndex();
 
     if(selectedTickets === null)
         selectedTickets = [];
@@ -170,7 +170,18 @@ function onConfirmTicketClick() {
 
     selectedTickets[ticketIndex] = data;
     window.sessionStorage.setItem("tickets", JSON.stringify(selectedTickets));
-    window.sessionStorage.setItem("ticketIndex", ticketIndex);
 
     location.href = "summary.html";
+}
+
+function getTicketIndex() {
+    var query = location.href.split("?");
+    if(query[1] === undefined)
+        return 0;
+
+    var tQuery = query[1].split("=");
+    if(tQuery[0] == "t" && tQuery[1] !== undefined)
+        return tQuery[1];
+
+    return 0;
 }
