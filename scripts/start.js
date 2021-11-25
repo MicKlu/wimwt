@@ -35,6 +35,10 @@ $(function () {
         window.sessionStorage.removeItem("cardType");
     });
 
+    $("#insert-card .latency").progressbar({
+        value: false
+    });
+
     window.sessionStorage.removeItem("tickets");
     window.sessionStorage.removeItem("change");
     window.sessionStorage.removeItem("cardType");
@@ -125,6 +129,7 @@ function awaitCardInsertion() {
     $("#panel button").prop("disabled", true);
     $("#insert-card h1").text("Wykryto kartę miejską");
     $("#insert-card p").text("Odczytywanie danych z karty...");
+    $("#insert-card .latency").show();
     $("#insert-card button").remove();
 
     setTimeout(() => {

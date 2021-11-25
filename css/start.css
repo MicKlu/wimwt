@@ -4,12 +4,23 @@
     background-image: var(--bg-image);
 }
 
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 #start-upper-row {
-    margin: 60px 20px 0;
+    margin: 15px 20px 0;
+    background: var(--dim-color);
+    padding: 15px;
+    border-radius: 5px;
 }
 
 #start-lower-row {    
-    margin: 50px 50px 0;
+    margin: 15px 20px 0;
+    background: var(--dim-color);
+    padding: 15px;
+    border-radius: 5px;
 }
 
 #start-upper-row button {
@@ -18,7 +29,7 @@
 
 #start-lower-row button {
     margin: 0 70px;
-    height: 300px;
+    height: 275px;
 }
 
 .pop-up .button-row button {
@@ -50,4 +61,8 @@
 #insert-card p {
     text-align: center;
     margin: 45px 0 15px;
+}
+
+#insert-card .latency {
+    display: none;
 }

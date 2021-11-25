@@ -4,7 +4,9 @@
         <title>ZKM Gdynia – Automat biletowy</title>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="css/start.css" />
+        <link rel="stylesheet" href="css/jquery-ui.min.css" />
         <script type="text/javascript" src="scripts/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
         <script type="text/javascript" src="scripts/tickets.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
         <script type="text/javascript" src="scripts/start.js"></script>
@@ -13,15 +15,21 @@
         <div id="container">
             <div id="screen">
                 <main>
-                    <div class="button-row" id="start-upper-row">
-                        <button id="single-trip-full">1-przejazdowy<br />Normalny</button>
-                        <button id="single-trip-reduced">1-przejazdowy<br />Ulgowy</button>
-                        <button id="one-hour-full">1-godzinny<br />Normalny</button>
-                        <button id="one-hour-reduced">1-godzinny<br />Ulgowy</button>
+                    <div id="start-upper-row">
+                        <h1>Szybki zakup</h1>
+                        <div class="button-row">
+                            <button id="single-trip-full">1-przejazdowy<br />Normalny</button>
+                            <button id="single-trip-reduced">1-przejazdowy<br />Ulgowy</button>
+                            <button id="one-hour-full">1-godzinny<br />Normalny</button>
+                            <button id="one-hour-reduced">1-godzinny<br />Ulgowy</button>
+                        </div>
                     </div>
-                    <div class="button-row" id="start-lower-row">
-                        <button id="buy-ticket">Kup bilet</button>
-                        <button id="top-up-card">Doładuj kartę<br />miejską</button>
+                    <div id="start-lower-row">
+                        <h1>Standardowy zakup</h1>
+                        <div class="button-row">
+                            <button id="buy-ticket">Kup bilet</button>
+                            <button id="top-up-card">Doładuj kartę<br />miejską</button>
+                        </div>
                     </div>
                 </main>
                 <div class="pop-up quickbuy" id="popup-single-trip-full">
@@ -112,6 +120,7 @@
                     <div class="container">
                         <h1>Włóż kartę miejską</h1>
                         <p>Proszę umieścić kartę miejską w czytniku.<br />System automatycznie przeniesie Cię do kolejnego okna.</p>
+                        <div class="latency"></div>
                         <div class="button-row">
                             <button class="popup-cancel">Anuluj</button>
                         </div>
