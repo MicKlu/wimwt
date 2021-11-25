@@ -33,14 +33,26 @@
                     <div class="buttons">
                         <div class="button-row">
                             <button id="add-ticket">Dodaj kolejny bilet</button>
-                            <button style="visibility: hidden"></button>
-                        </div>
-                        <div class="button-row">
-                            <button id="pay-cash">Zapłać gotówką</button>
-                            <button id="pay-card">Zapłać kartą</button>
+                            <button id="pay">Zapłać</button>
                         </div>
                     </div>
                 </main>
+                <div class="pop-up" id="popup-pay">
+                    <div class="container">
+                        <h1>Wybierz metodę płatności</h1>
+                        <div class="total-price">
+                            <p>Do zapłaty: </p>
+                            <p><span>7,60</span></p>
+                        </div>
+                        <div class="button-row" id="payment-method">
+                            <button id="pay-cash">Gotówka</button>
+                            <button id="pay-card">Karta</button>
+                        </div>
+                        <div class="button-row">
+                            <button class="popup-cancel">Anuluj</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

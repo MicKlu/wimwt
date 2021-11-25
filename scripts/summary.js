@@ -9,6 +9,14 @@ $(function () {
     $(".button-prev").click(onPrevButtonClick);
     $(".button-next").click(onNextButtonClick);
 
+    $("#pay").click(() => {
+        $("#popup-pay").css("display", "flex");
+    });
+
+    $(".popup-cancel").click((e) => {
+        $(e.currentTarget).parents(".pop-up").hide();
+    });
+
     $("#pay-cash").click(() => {
         location.href = "paymentcash.html";
     });
@@ -30,7 +38,7 @@ function fetchSummaryTable() {
     for(var i = 0; i < tickets.length; i++) {
         var row = $("<tr></tr>");
 
-        if(i >= 3) {
+        if(i >= 4) {
             row.hide();
             $(".button-next").css("display", "inline-flex");
         }
@@ -83,7 +91,7 @@ function fetchSummaryTable() {
         totalPrice += tickets[i].totalPrice;
     }
 
-    $(".total-price td:first").text(formatPrice(totalPrice) + " zł");
+    $(".total-price td:first, .total-price span").text(formatPrice(totalPrice) + " zł");
 
     $("#summary button.button-edit").click(onEditTicketClick);
     $("#summary button.button-remove").click(onRemoveTicketClick);
