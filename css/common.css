@@ -195,22 +195,11 @@ p#ticket-price{
     margin-bottom: 30px;
 }
 
-.pop-up #zone-buttons.button-row {
+.pop-up .button-row {
     display: flex;
-    flex-flow: column;
-    height: initial;
-    align-items: center;
 }
 
-.pop-up #zone-buttons button {
-    text-align: left;
-    height: 80px;
-    font-size: 24px;
-    padding: 0 15px;
-    margin: 10px 0;
-}
-
-.pop-up #zone-buttons .popup-cancel {
+.pop-up .popup-cancel {
     text-align: center;
     width: 180px;
     height: 60px;
@@ -264,4 +253,18 @@ p#ticket-price{
     margin: 0 10px;
     background: var(--dim-color-light);
     color: var(--text-color);
+}
+
+.latency.ui-progressbar {
+    height: 0.7em;
+    width: 250px;
+    margin: 30px auto;
+}
+
+.latency.ui-progressbar .ui-widget-header {
+    background: var(--bg-color);
+}
+
+.latency.ui-progressbar .ui-progressbar-value {
+    height: 1em;
 }

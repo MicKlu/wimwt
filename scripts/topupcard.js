@@ -10,7 +10,10 @@ $(function () {
     $(".button-row.ticket-period button").click(onTicketPeriodClick);
     $(".button-row.ticket-zone button").click(onTicketZoneClick);
     $(".pop-up .popup-cancel").click(onTicketZoneCancelClick);
-    $(".pop-up #zone-buttons button:not(:last-child)").click(onTicketZoneSelectClick)
+    $(".pop-up #zone-buttons button").click(onTicketZoneSelectClick)
+
+    $(".pop-up .button-up").click(onUpButtonClick);
+    $(".pop-up .button-down").click(onDownButtonClick);
 
     $("#confirm").click(onConfirmTicketClick);
 
@@ -124,8 +127,6 @@ function updateDescription() {
 
     var cardType = window.sessionStorage.getItem("cardType");
 
-    console.log(data);
-
     var desc = [];
     desc.push(TICKETS["seasonal"].zones[data.zone].owner[data.owner].name);
 
@@ -154,4 +155,32 @@ function onConfirmTicketClick(e) {
     window.sessionStorage.setItem("tickets", JSON.stringify(selectedTickets));
 
     location.href = "summary.html";
+}
+
+function onUpButtonClick(e) {
+    var buttons = $("#zone-buttons button");
+    var visibleButtons = buttons.filter(":visible");
+    visibleButtons.eq(visibleButtons.length - 1).hide();
+
+    var indexToShow = buttons.index(visibleButtons) - 1;
+    buttons.eq(indexToShow).show();
+
+    $(".pop-up .button-down").css("display", "inline-flex");
+
+    if(indexToShow == 0)
+        $(this).hide();
+}
+
+function onDownButtonClick(e) {
+    var buttons = $("#zone-buttons button");
+    var visibleButtons = buttons.filter(":visible");
+    visibleButtons.eq(0).hide();
+
+    var indexToShow = buttons.index(visibleButtons) + visibleButtons.length;
+    buttons.eq(indexToShow).show();
+
+    $(".pop-up .button-up").css("display", "inline-flex");
+
+    if(indexToShow == buttons.length - 1)
+        $(this).hide();
 }

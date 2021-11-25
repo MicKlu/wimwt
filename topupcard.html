@@ -4,6 +4,7 @@
         <title>ZKM Gdynia – Automat biletowy</title>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="css/topupcard.css" />
+        <link rel="stylesheet" href="css/all.min.css" />
         <script type="text/javascript" src="scripts/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="scripts/tickets.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
@@ -48,12 +49,23 @@
                 <div class="pop-up">
                     <div class="container">
                         <h1>Wybierz strefę</h1>
-                        <div id="zone-buttons" class="button-row">
-                            <button data-zone="0">Zwykłe i nocne w granicach Gdyni</button>
-                            <button data-zone="1">Zwykłe, pospieszne i nocne w granicach Gdyni</button>
-                            <button data-zone="2">Zwykłe, pospieszne i nocne w granicach Sopotu albo Rumi albo gm. Kosakowo<br />albo gm. Żukowo albo gm. Szemud albo gm. Wejherowo</button>
-                            <button data-zone="3">Zwykłe, pospieszne i nocne w granicach Rumi, Redy i miasta Wejherowa<br />albo gm. Wejherowo i Rumi</button>
-                            <button data-zone="4">Zwykłe, pospieszne i nocne w obrębie sieci komunikacyjnej<br />[w tym linie G, N1, 101 i 171]</button>
+                        <div class="list">
+                            <div id="zone-buttons" class="button-row">
+                                <button data-zone="0">Zwykłe i nocne w granicach Gdyni</button>
+                                <button data-zone="1">Zwykłe, pospieszne i nocne w granicach Gdyni</button>
+                                <button data-zone="2">Zwykłe, pospieszne i nocne w granicach Sopotu albo Rumi<br />albo gm. Kosakowo albo gm. Żukowo albo gm. Szemud<br />albo gm. Wejherowo</button>
+                                <button data-zone="3">Zwykłe, pospieszne i nocne w granicach Rumi, Redy i miasta Wejherowa albo gm. Wejherowo i Rumi</button>
+                                <button data-zone="4">Zwykłe, pospieszne i nocne w obrębie sieci komunikacyjnej<br />[w tym linie G, N1, 101 i 171]</button>
+                            </div>
+                            <div class="scroll">
+                                <button class="button-up"><i class="fas fa-chevron-up"></i></button>
+                                <div class="rail">
+                                    <div class="handle"></div>
+                                </div>
+                                <button class="button-down"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                        </div>
+                        <div class="button-row">
                             <button class="popup-cancel">Anuluj</button>
                         </div>
                     </div>
