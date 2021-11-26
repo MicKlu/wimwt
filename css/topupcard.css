@@ -63,6 +63,10 @@
     margin: 10px 0;
 }
 
+.pop-up .scroll button.button-up {
+    display: none;
+}
+
 .pop-up #zone-buttons button:nth-last-child(1),
 .pop-up #zone-buttons button:nth-last-child(2) {
     display: none;
