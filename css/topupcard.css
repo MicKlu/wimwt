@@ -67,11 +67,6 @@
     display: none;
 }
 
-.pop-up #zone-buttons button:nth-last-child(1),
-.pop-up #zone-buttons button:nth-last-child(2) {
-    display: none;
-}
-
 .pop-up .button-row {
     height: initial;
 }

@@ -38,6 +38,12 @@ $(function () {
         $('button[data-type="semestral"]').remove();
     else if(cardType == "reduced")
         $('button[data-owner="bearer"]').remove();
+
+    $(".pop-up #zone-buttons button").each((i, e) => {
+        if(i < 3)
+            return;
+        $(e).hide();
+    });
 });
 
 function onTicketOwnerClick(e) {

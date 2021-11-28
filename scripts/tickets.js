@@ -211,7 +211,7 @@ const TICKETS = {
                 }
             },
             {
-                name: "Zwykłe, pospieszne i nocne w granicach Sopotu albo Rumi albo gm. Kosakowo albo gm. Żukowo albo gm. Szemud albo gm. Wejherowo",
+                name: "Zwykłe, pospieszne i nocne w granicach Sopotu",
                 owner: {
                     personal: {
                         name: "Imienny",
@@ -263,7 +263,319 @@ const TICKETS = {
                 }
             },
             {
-                name: "Zwykłe, pospieszne i nocne w granicach Rumi, Redy i miasta Wejherowa albo gm. Wejherowo i Rumi",
+                name: "Zwykłe, pospieszne i nocne w granicach Rumi",
+                owner: {
+                    personal: {
+                        name: "Imienny",
+                        type: {
+                            monthly: {
+                                name: "Miesięczny",
+                                period: {
+                                    weekdays: {
+                                        name: "Ważny od pon. do pt.",
+                                        price: {
+                                            full: 64.0,
+                                            reduced: 32.0
+                                        }
+                                    },
+                                    weekly: {
+                                        name: "Ważny cały tydzień",
+                                        price: {
+                                            full: 68.0,
+                                            reduced: 34.0
+                                        }
+                                    }
+                                }
+                            },
+                            semestral: {
+                                name: "Semestralny",
+                                period: {
+                                    "4-months": {
+                                        name: "4-miesięczny",
+                                        price: {
+                                            reduced: 129.0
+                                        }
+                                    },
+                                    "5-months": {
+                                        name: "5-miesięczny",
+                                        price: {
+                                            reduced: 162.0
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    bearer: {
+                        name: "Na okaziciela",
+                        price: {
+                            full: 79.0
+                        }
+                    }
+                }
+            },
+            {
+                name: "Zwykłe, pospieszne i nocne w granicach gm. Kosakowo",
+                owner: {
+                    personal: {
+                        name: "Imienny",
+                        type: {
+                            monthly: {
+                                name: "Miesięczny",
+                                period: {
+                                    weekdays: {
+                                        name: "Ważny od pon. do pt.",
+                                        price: {
+                                            full: 64.0,
+                                            reduced: 32.0
+                                        }
+                                    },
+                                    weekly: {
+                                        name: "Ważny cały tydzień",
+                                        price: {
+                                            full: 68.0,
+                                            reduced: 34.0
+                                        }
+                                    }
+                                }
+                            },
+                            semestral: {
+                                name: "Semestralny",
+                                period: {
+                                    "4-months": {
+                                        name: "4-miesięczny",
+                                        price: {
+                                            reduced: 129.0
+                                        }
+                                    },
+                                    "5-months": {
+                                        name: "5-miesięczny",
+                                        price: {
+                                            reduced: 162.0
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    bearer: {
+                        name: "Na okaziciela",
+                        price: {
+                            full: 79.0
+                        }
+                    }
+                }
+            },
+            {
+                name: "Zwykłe, pospieszne i nocne w granicach gm. Żukowo",
+                owner: {
+                    personal: {
+                        name: "Imienny",
+                        type: {
+                            monthly: {
+                                name: "Miesięczny",
+                                period: {
+                                    weekdays: {
+                                        name: "Ważny od pon. do pt.",
+                                        price: {
+                                            full: 64.0,
+                                            reduced: 32.0
+                                        }
+                                    },
+                                    weekly: {
+                                        name: "Ważny cały tydzień",
+                                        price: {
+                                            full: 68.0,
+                                            reduced: 34.0
+                                        }
+                                    }
+                                }
+                            },
+                            semestral: {
+                                name: "Semestralny",
+                                period: {
+                                    "4-months": {
+                                        name: "4-miesięczny",
+                                        price: {
+                                            reduced: 129.0
+                                        }
+                                    },
+                                    "5-months": {
+                                        name: "5-miesięczny",
+                                        price: {
+                                            reduced: 162.0
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    bearer: {
+                        name: "Na okaziciela",
+                        price: {
+                            full: 79.0
+                        }
+                    }
+                }
+            },
+            {
+                name: "Zwykłe, pospieszne i nocne w granicach gm. Szemud",
+                owner: {
+                    personal: {
+                        name: "Imienny",
+                        type: {
+                            monthly: {
+                                name: "Miesięczny",
+                                period: {
+                                    weekdays: {
+                                        name: "Ważny od pon. do pt.",
+                                        price: {
+                                            full: 64.0,
+                                            reduced: 32.0
+                                        }
+                                    },
+                                    weekly: {
+                                        name: "Ważny cały tydzień",
+                                        price: {
+                                            full: 68.0,
+                                            reduced: 34.0
+                                        }
+                                    }
+                                }
+                            },
+                            semestral: {
+                                name: "Semestralny",
+                                period: {
+                                    "4-months": {
+                                        name: "4-miesięczny",
+                                        price: {
+                                            reduced: 129.0
+                                        }
+                                    },
+                                    "5-months": {
+                                        name: "5-miesięczny",
+                                        price: {
+                                            reduced: 162.0
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    bearer: {
+                        name: "Na okaziciela",
+                        price: {
+                            full: 79.0
+                        }
+                    }
+                }
+            },
+            {
+                name: "Zwykłe, pospieszne i nocne w granicach gm. Wejherowo",
+                owner: {
+                    personal: {
+                        name: "Imienny",
+                        type: {
+                            monthly: {
+                                name: "Miesięczny",
+                                period: {
+                                    weekdays: {
+                                        name: "Ważny od pon. do pt.",
+                                        price: {
+                                            full: 64.0,
+                                            reduced: 32.0
+                                        }
+                                    },
+                                    weekly: {
+                                        name: "Ważny cały tydzień",
+                                        price: {
+                                            full: 68.0,
+                                            reduced: 34.0
+                                        }
+                                    }
+                                }
+                            },
+                            semestral: {
+                                name: "Semestralny",
+                                period: {
+                                    "4-months": {
+                                        name: "4-miesięczny",
+                                        price: {
+                                            reduced: 129.0
+                                        }
+                                    },
+                                    "5-months": {
+                                        name: "5-miesięczny",
+                                        price: {
+                                            reduced: 162.0
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    bearer: {
+                        name: "Na okaziciela",
+                        price: {
+                            full: 79.0
+                        }
+                    }
+                }
+            },
+            {
+                name: "Zwykłe, pospieszne i nocne w granicach Rumi, Redy i miasta Wejherowa",
+                owner: {
+                    personal: {
+                        name: "Imienny",
+                        type: {
+                            monthly: {
+                                name: "Miesięczny",
+                                period: {
+                                    weekdays: {
+                                        name: "Ważny od pon. do pt.",
+                                        price: {
+                                            full: 82.0,
+                                            reduced: 41.0
+                                        }
+                                    },
+                                    weekly: {
+                                        name: "Ważny cały tydzień",
+                                        price: {
+                                            full: 90.0,
+                                            reduced: 45.0
+                                        }
+                                    }
+                                }
+                            },
+                            semestral: {
+                                name: "Semestralny",
+                                period: {
+                                    "4-months": {
+                                        name: "4-miesięczny",
+                                        price: {
+                                            reduced: 171.0
+                                        }
+                                    },
+                                    "5-months": {
+                                        name: "5-miesięczny",
+                                        price: {
+                                            reduced: 214.0
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    bearer: {
+                        name: "Na okaziciela",
+                        price: {
+                            full: 103.0
+                        }
+                    }
+                }
+            },
+            {
+                name: "Zwykłe, pospieszne i nocne w granicach gm. Wejherowo i Rumi",
                 owner: {
                     personal: {
                         name: "Imienny",
