@@ -45,7 +45,7 @@ function addFunds(value) {
     updatePaidRemaining();
 
     if(remaining < 1 && Math.round(remaining) <= 0) {
-        window.sessionStorage.setItem("change", remaining);
+        window.sessionStorage.setItem("change", Math.round(remaining));
         setTimeout(() => {
             location.href = "finish.html";
         }, 1000);

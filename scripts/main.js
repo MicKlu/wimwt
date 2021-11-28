@@ -65,9 +65,7 @@ function fetchNavBottom()
     `)
 
 
-    $("#button-back").click(() => {
-        history.back();
-    });
+    $("#button-back").click(onBackButtonClick);
 
     $("#button-cancel").click(() => {
        location.href = "index.html"; 
@@ -90,4 +88,8 @@ function showButtonRow(rowHideClasses, rowShowClass) {
     for(var i = 0; i < rowHideClasses.length; i++)
         $(".button-row" + rowHideClasses[i]).hide();
     $(".button-row" + rowShowClass).css("display", "flex");
+}
+
+function onBackButtonClick() {
+    history.back();
 }

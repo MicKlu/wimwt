@@ -4,6 +4,7 @@
         <title>ZKM Gdynia – Automat biletowy</title>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="css/buyticket.css" />
+        <link rel="stylesheet" href="css/all.min.css" />
         <script type="text/javascript" src="scripts/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="scripts/tickets.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
@@ -29,22 +30,20 @@
                             <button data-type="one-day">24-godzinny</button>
                             <button data-type="two-days">72-godzinny</button>
                         </div>
+                        <div class="button-row ticket-price">
+                            <button data-price="full">Normalny</button>
+                            <button data-price="reduced">Ulgowy</button>
+                        </div>
                         <div class="button-row ticket-zone single-trip">
                             <button data-zone="0">Linie zwykłe<br />i nocne</button>
                             <button data-zone="1">Linie zwykłe,<br />pospieszne i nocne</button>
                         </div>
-                        <div class="button-row ticket-zone one-day">
-                            <button data-zone="2">Komunalny</button>
-                            <button data-zone="3">Kolejowo-<br />komunalny<br />2 organizatorów</button>
-                            <button data-zone="4">Kolejowo-<br />komunalny</button>
+                        <div class="button-row ticket-zone one-day zone-selector">
+                            <button><p>Strefa...</p><p>Proszę wybrać strefę</p></button>
                         </div>
                         <div class="button-row ticket-zone two-days">
                             <button data-zone="2">Komunalny</button>
-                            <button data-zone="4">Kolejowo-<br />komunalny</button>
-                        </div>
-                        <div class="button-row ticket-price">
-                            <button data-price="full">Normalny</button>
-                            <button data-price="reduced">Ulgowy</button>
+                            <button data-zone="6">Kolejowo-<br />komunalny</button>
                         </div>
                     </div>
                     <div id="right-pane">
@@ -70,6 +69,30 @@
                         </div>
                     </div>
                 </main>
+                <div class="pop-up">
+                    <div class="container">
+                        <h1>Wybierz strefę</h1>
+                        <div class="list">
+                            <div id="zone-buttons" class="button-row ticket-zone one-day">
+                                <button data-zone="2">Komunalny</button>
+                                <button data-zone="3">Kolejowo-komunalny – ZKM Gdynia</button>
+                                <button data-zone="4">Kolejowo-komunalny – ZTM Gdańsk</button>
+                                <button data-zone="5">Kolejowo-komunalny – MZK Wejherowo</button>
+                                <button data-zone="6">Kolejowo-komunalny</button>
+                            </div>
+                            <div class="scroll">
+                                <button class="button-up"><i class="fas fa-chevron-up"></i></button>
+                                <div class="rail">
+                                    <div class="handle"></div>
+                                </div>
+                                <button class="button-down"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                        </div>
+                        <div class="button-row">
+                            <button class="popup-cancel">Anuluj</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

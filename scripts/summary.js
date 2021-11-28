@@ -63,7 +63,6 @@ function fetchSummaryTable() {
                 name.push(TICKETS["seasonal"].zones[tickets[i].zone].owner[tickets[i].owner].type[tickets[i].type].name);
                 name.push(TICKETS["seasonal"].zones[tickets[i].zone].owner[tickets[i].owner].type[tickets[i].type].period[tickets[i].period].name);
             }
-            else
             priceType = cardType;
         }
         

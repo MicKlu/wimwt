@@ -9,6 +9,10 @@ $(function () {
     $(".button-row.ticket-type button").click(onTicketTypeClick);
     $(".button-row.ticket-zone button").click(onTicketZoneClick);
     $(".button-row.ticket-price button").click(onTicketPriceClick);
+
+    $(".pop-up .popup-cancel").click(onTicketZoneCancelClick);
+    $(".pop-up .button-up").click(onUpButtonClick);
+    $(".pop-up .button-down").click(onDownButtonClick);
     
     $(".number-of-tickets .input button:first").click(onTicketDecreaseClick);
     $(".number-of-tickets .input input").change(onNumberOfTicketsChange);
@@ -30,12 +34,20 @@ $(function () {
         
         $(".button-row.ticket-seller:visible " + '[data-seller="' + seller + '"]').click();
         $(".button-row.ticket-type:visible " + '[data-type="' + type + '"]').click();
-        $(".button-row.ticket-zone:visible " + '[data-zone="' + zone + '"]').click();
         $(".button-row.ticket-price:visible " + '[data-price="' + price + '"]').click();
-
+        if(seller == "mzkzg" && type == "one-day")
+            $("#zone-buttons.button-row.ticket-zone " + '[data-zone="' + zone + '"]').click();
+        else
+            $(".button-row.ticket-zone:visible " + '[data-zone="' + zone + '"]').click();
         $(".number-of-tickets .input input").val(numberOfTickets);
     }
     increaseNumberOfTickets(0);
+
+    $(".pop-up #zone-buttons button").each((i, e) => {
+        if(i < 3)
+            return;
+        $(e).hide();
+    });
 });
 
 function onTicketSellerClick(e) {
@@ -44,7 +56,7 @@ function onTicketSellerClick(e) {
     self.parents(".button-row").find("button").removeClass("selected");
     self.addClass("selected");
     
-    showButtonRow([".ticket-type", ".ticket-zone", ".ticket-price"], "." + nextRowClass);
+    showButtonRow([".ticket-type", ".ticket-price", ".ticket-zone"], "." + nextRowClass);
     var selectedButton = $(".button-row.ticket-type." + nextRowClass + " button.selected");
     if(selectedButton.length)
         selectedButton.click();
@@ -60,45 +72,91 @@ function onTicketTypeClick(e) {
     buttons.removeClass("selected");
     buttons.filter('[data-type="' + nextRowClass + '"]').addClass("selected");
 
-    if(self.parents(".ticket-type").hasClass("zkm")) {
-        showButtonRow([".ticket-zone", ".ticket-price"], ".ticket-price");
-        var selectedButton = $(".button-row.ticket-price button.selected");
-        if(selectedButton.length)
-            selectedButton.click();
-        else
-            $(".button-row.ticket-price button").eq(0).click();
-    }
-    else {
-        showButtonRow([".ticket-zone", ".ticket-price"], "." + nextRowClass);
-        var selectedButton = $(".button-row.ticket-zone." + nextRowClass + " button.selected");
-        if(selectedButton.length)
-            selectedButton.click();
-        else
-            $(".button-row.ticket-zone." + nextRowClass + " button").eq(0).click();
-    }
-}
-
-function onTicketZoneClick(e) {
-    var self = $(e.target);
-    var nextRowClass = self.data("zone");
-    var buttons = $(".button-row.ticket-zone button");
-    
-    buttons.removeClass("selected");
-    buttons.filter('[data-zone="' + nextRowClass + '"]').addClass("selected");
-    
-    showButtonRow([], ".ticket-price");
-    $(".button-row.ticket-price button.selected").click();
+    showButtonRow([".ticket-price", ".ticket-zone"], ".ticket-price");
+    var selectedButton = $(".button-row.ticket-price button.selected");
+    if(selectedButton.length)
+        selectedButton.click();
+    else
+        $(".button-row.ticket-price button").eq(0).click();
 }
 
 function onTicketPriceClick(e) {
     var self = $(e.target);
-    var nextRowClass = self.data("price");
+    var seller = $(".ticket-seller button.selected").data("seller");
+    var type = $('.ticket-type.' + seller + ' button.selected').data("type");
+    var nextRowClass = type;
     var buttons = $(".button-row.ticket-price button");
     
     buttons.removeClass("selected");
     self.addClass("selected");
 
+    if(seller == "zkm") {
+        updateDescription();
+    }
+    else {
+        showButtonRow([".ticket-zone"], "." + nextRowClass);
+        var selectedButton = $(".button-row.ticket-zone." + nextRowClass + " button.selected");
+
+        if(selectedButton.length)
+            selectedButton.click();
+        else
+            $(".button-row.ticket-zone." + nextRowClass + ":not(.zone-selector) button").eq(0).click();
+    }
+}
+
+function onTicketZoneClick(e) {
+    var self = $(e.target);
+    var buttonRow = self.parents(".button-row");
+    
+    if(buttonRow.hasClass("zone-selector")) {
+        $(".pop-up").css("display", "flex");
+        return;
+    }
+
+    if(buttonRow.parents(".pop-up").length) {
+        buttonRow.parents(".pop-up").hide();
+        $(".zone-selector p:last-child").text(self.text());
+    }
+
+    var nextRowClass = self.data("zone");
+    var buttons = $(".button-row.ticket-zone button");
+
+    buttons.removeClass("selected");
+    buttons.filter('[data-zone="' + nextRowClass + '"]').addClass("selected");
+
     updateDescription();
+}
+
+function onTicketZoneCancelClick(e) {
+    $(".pop-up").hide();
+}
+
+function onUpButtonClick(e) {
+    var buttons = $("#zone-buttons button");
+    var visibleButtons = buttons.filter(":visible");
+    visibleButtons.eq(visibleButtons.length - 1).hide();
+
+    var indexToShow = buttons.index(visibleButtons) - 1;
+    buttons.eq(indexToShow).show();
+
+    $(".pop-up .button-down").css("display", "inline-flex");
+
+    if(indexToShow == 0)
+        $(this).hide();
+}
+
+function onDownButtonClick(e) {
+    var buttons = $("#zone-buttons button");
+    var visibleButtons = buttons.filter(":visible");
+    visibleButtons.eq(0).hide();
+
+    var indexToShow = buttons.index(visibleButtons) + visibleButtons.length;
+    buttons.eq(indexToShow).show();
+
+    $(".pop-up .button-up").css("display", "inline-flex");
+
+    if(indexToShow == buttons.length - 1)
+        $(this).hide();
 }
 
 function updateDescription() {
@@ -106,6 +164,10 @@ function updateDescription() {
     $(".button-row:visible button.selected").each((i, self) => {
         data = {...data, ...$(self).data()};
     });
+
+    if(data.seller == "mzkzg" && data.type == "one-day") {
+        data = {...data, ...$('#zone-buttons.button-row.ticket-zone button.selected').data()};
+    }
     
     var price;
     var desc;
@@ -184,4 +246,12 @@ function getTicketIndex() {
         return tQuery[1];
 
     return 0;
+}
+
+function onBackButtonClick() {
+    var selectedTickets = JSON.parse(window.sessionStorage.getItem("tickets"));
+    if(selectedTickets.length == 0)
+        location.href = "index.html";
+    else
+        history.back();
 }

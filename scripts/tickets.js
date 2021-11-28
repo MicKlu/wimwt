@@ -56,15 +56,31 @@ const TICKETS = {
                     {},{},
                     {
                         name: "Komunalny",
-                        desc: "24-godzinny komunalny<br />obowiązuje w pojazdach: ZTM Gdańsku<br />i ZKM w Gdyni i MZK Wejherowo",
+                        desc: "24-godzinny komunalny<br />obowiązuje w pojazdach: ZTM w Gdańsku<br />i ZKM w Gdyni i MZK Wejherowo",
                         price: {
                             full: 16.00,
                             reduced: 8.00
                         }
                     },
                     {
-                        name: "Kolejowo-komunalny 2 organizatorów",
-                        desc: "24-godzinny kolejowo-komunalny dwóch organizatorów<br />obowiązuje w pociągach SKM i PR oraz w pojazdach: ZTM Gdańsku albo ZKM w Gdyni albo MZK Wejherowo",
+                        name: "Kolejowo-komunalny – ZKM Gdynia",
+                        desc: "24-godzinny kolejowo-komunalny dwóch organizatorów<br />obowiązuje w pociągach SKM i PR oraz w pojazdach: ZKM w Gdyni",
+                        price: {
+                            full: 22.00,
+                            reduced: 11.00
+                        }
+                    },
+                    {
+                        name: "Kolejowo-komunalny – ZTM Gdańsk",
+                        desc: "24-godzinny kolejowo-komunalny dwóch organizatorów<br />obowiązuje w pociągach SKM i PR oraz w pojazdach: ZTM w Gdańsku",
+                        price: {
+                            full: 22.00,
+                            reduced: 11.00
+                        }
+                    },
+                    {
+                        name: "Kolejowo-komunalny – MZK Wejherowo",
+                        desc: "24-godzinny kolejowo-komunalny dwóch organizatorów<br />obowiązuje w pociągach SKM i PR oraz w pojazdach: MZK Wejherowo",
                         price: {
                             full: 22.00,
                             reduced: 11.00
@@ -72,7 +88,7 @@ const TICKETS = {
                     },
                     {
                         name: "Kolejowo-komunalny",
-                        desc: "24-godzinny kolejowo-komunalny<br />obowiązuje w pociągach SKM i PR oraz w pojazdach: ZTM Gdańsku i ZKM w Gdyni i MZK Wejherowo",
+                        desc: "24-godzinny kolejowo-komunalny<br />obowiązuje w pociągach SKM i PR oraz w pojazdach: ZTM w Gdańsku i ZKM w Gdyni i MZK Wejherowo",
                         price: {
                             full: 25.00,
                             reduced: 12.50
@@ -86,15 +102,15 @@ const TICKETS = {
                     {}, {},
                     {
                         name: "Komunalny",
-                        desc: "72-godzinny komunalny<br />obowiązuje w pojazdach: ZTM Gdańsku<br />i ZKM w Gdyni i MZK Wejherowo",
+                        desc: "72-godzinny komunalny<br />obowiązuje w pojazdach: ZTM w Gdańsku<br />i ZKM w Gdyni i MZK Wejherowo",
                         price: {
                             full: 32.00,
                             reduced: 16.00
                         }
-                    }, {},
+                    }, {}, {}, {},
                     {
                         name: "Kolejowo-komunalny",
-                        desc: "72-godzinny kolejowo-komunalny<br />obowiązuje w pociągach SKM i PR oraz w pojazdach: ZTM Gdańsku i ZKM w Gdyni i MZK Wejherowo",
+                        desc: "72-godzinny kolejowo-komunalny<br />obowiązuje w pociągach SKM i PR oraz w pojazdach: ZTM w Gdańsku i ZKM w Gdyni i MZK Wejherowo",
                         price: {
                             full: 50.00,
                             reduced: 25.00

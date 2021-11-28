@@ -132,6 +132,7 @@ function updateDescription() {
     var desc;
 
     var cardType = window.sessionStorage.getItem("cardType");
+    data.price = cardType;
 
     var desc = [];
     desc.push(TICKETS["seasonal"].zones[data.zone].owner[data.owner].name);
@@ -189,4 +190,12 @@ function onDownButtonClick(e) {
 
     if(indexToShow == buttons.length - 1)
         $(this).hide();
+}
+
+function onBackButtonClick() {
+    var selectedTickets = JSON.parse(window.sessionStorage.getItem("tickets"));
+    if(selectedTickets.length == 0)
+        location.href = "index.html";
+    else
+        history.back();
 }
