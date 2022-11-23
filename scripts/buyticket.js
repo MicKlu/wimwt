@@ -250,7 +250,7 @@ function getTicketIndex() {
 
 function onBackButtonClick() {
     var selectedTickets = JSON.parse(window.sessionStorage.getItem("tickets"));
-    if(selectedTickets.length == 0)
+    if(!selectedTickets || selectedTickets.length == 0)
         location.href = "index.html";
     else
         history.back();
